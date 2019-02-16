@@ -9,10 +9,10 @@ package messaging.system;
  *
  * @author mathew
  */
-public class Parameter<t>{
+public class Parameter{
     final private boolean ESSENTIAL;
     final private String IDENTIFIER;
-    
+    private String value = null;
     public Parameter(String identifier, boolean essential){
         ESSENTIAL = essential;
         IDENTIFIER = identifier;
@@ -22,8 +22,34 @@ public class Parameter<t>{
         return IDENTIFIER;
     }
     
+    public void setValue(String val){
+        this.value = val;
+    }
+    
+    public String getValue(){
+        return this.value;
+    }
+    
     public boolean isEssential(){
         return ESSENTIAL;
+    }
+    
+    public boolean isEmpty(){
+        return (value == null);
+    }
+    
+    public Integer parseInteger(){
+        if(value != null){
+            try{
+                Integer ret = Integer.parseInt(value);
+                return ret;
+            }
+            catch(Exception e){
+                System.out.println("Invalid format for parameter [-"+IDENTIFIER+"]: \""+value+"\" is not an integer.");
+            }
+        }
+        
+        return null;
     }
     
     

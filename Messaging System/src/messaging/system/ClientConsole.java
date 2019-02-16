@@ -5,20 +5,15 @@
  */
 package messaging.system;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author mathew
  */
-public class MessagingSystem {
+public class ClientConsole implements ClientUserInterface{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ChatServer.main(args);
+    @Override
+    public void printConsole(String consoleMessage) {
+        System.out.println("[Console] - "+consoleMessage);
     }
     
 }

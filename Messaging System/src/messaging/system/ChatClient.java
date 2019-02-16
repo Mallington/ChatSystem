@@ -14,6 +14,11 @@ public class ChatClient {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Constants.updateConstants(args, Constants.NodeType.ChatClient);
+        
+        ClientConsole console = new ClientConsole();
+        
+        ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort(), console);
+        
     }
 }

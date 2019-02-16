@@ -5,20 +5,15 @@
  */
 package messaging.system;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
 /**
  *
  * @author mathew
  */
-public class MessagingSystem {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ChatServer.main(args);
-    }
+public class Packet implements Serializable{
+    String SENDER_IP = "";
+    String SENDER_ID = null;
     
+    Object PAYLOAD = null;
 }

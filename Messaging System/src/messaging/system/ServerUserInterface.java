@@ -5,20 +5,11 @@
  */
 package messaging.system;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author mathew
  */
-public class MessagingSystem {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        ChatServer.main(args);
-    }
-    
+public interface ServerUserInterface {
+    public void displayError(String title, String body);
+    public void displayPort(int port);
 }
