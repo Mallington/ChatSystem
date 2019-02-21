@@ -17,7 +17,7 @@ public class ClientNetwork extends NetworkUtils{
     private ClientUserInterface userInterface;
     
     public ClientNetwork(String serverAddress, int port, ClientUserInterface user){
-        super(serverAddress, port);
+        super(serverAddress, port, user);
         
         this.userInterface = user;
         userInterface.printConsole("Attempting to connect via \""+serverAddress+":"+""+port+"\".");
@@ -25,5 +25,13 @@ public class ClientNetwork extends NetworkUtils{
     
     private void connect() throws IOException{
         ServerSocket sock = new ServerSocket();
+    }
+
+    @Override
+    Packet requestRecieved(Packet request) {
+        Packet returnPacket = new Packet();
+        returnPacket.setHeaderType(Constants.Header.UNEXPECTED_PACKET);
+
+        return returnPacket;
     }
 }

@@ -9,6 +9,6 @@ package messaging.system;
  *
  * @author mathew
  */
-public interface ClientUserInterface {
-    public void printConsole(String consoleMessage);
+public interface ClientUserInterface extends MasterUserInterface{
+    public void displayMessage(Message message);
 }

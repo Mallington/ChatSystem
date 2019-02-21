@@ -16,7 +16,7 @@ public class ChatServer {
    
     public static void main(String[] args) {
      Constants.updateConstants(args, Constants.NodeType.ChatServer);
-     
+
      
     }
 }

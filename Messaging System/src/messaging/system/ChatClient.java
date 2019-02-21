@@ -5,6 +5,8 @@
  */
 package messaging.system;
 
+import java.io.IOException;
+
 /**
  *
  * @author mathew
@@ -19,6 +21,15 @@ public class ChatClient {
         ClientConsole console = new ClientConsole();
         
         ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort(), console);
-        
+        Packet request = new Packet();
+        request.setHeaderType(Constants.Header.SUCCESS);
+        client.setTimeout(5000);
+        try {
+            client.makeRequest(request);
+        } catch (IOException e) {
+            console.displayError("Network Error", e.getMessage()+"\n Troubleshooting:\nMake");
+
+        }
+
     }
 }

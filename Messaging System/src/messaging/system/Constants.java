@@ -20,13 +20,10 @@ public class Constants {
         ChatServer, ChatClient
     }
     
-    public enum Headers implements Serializable{
-        CREATE_USER, DELETE_USER, SEND_MESSAGE, GET_CHAT_ROOM, GET_MESSAGES, GET_USERS
+    public enum Header implements Serializable{
+        CREATE_USER, DELETE_USER, SEND_MESSAGE, GET_CHAT_ROOM, GET_MESSAGES, GET_USERS, NOT_AUTHORISED, SUCCESS, INVALID_HEADER, UNEXPECTED_PACKET
     }
-    
-    public enum Responces implements Serializable{
-        NOT_AUTHORISED, SUCCESS, INVALID_HEADER
-    }
+
 
     public static void updateConstants(String[] args, NodeType type) {
 

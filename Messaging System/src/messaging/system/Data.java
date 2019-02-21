@@ -27,11 +27,4 @@ public class Data {
         List<String> MESSAGE_IDS = new ArrayList<String>();
     }
     
-    public class Message{
-        String MESSAGE_ID = null;
-        String SENDER_ID;
-        String ROOM_ID;
-        String BODY;
-    }
-    
 }

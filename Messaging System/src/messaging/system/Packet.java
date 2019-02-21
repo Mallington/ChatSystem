@@ -12,8 +12,39 @@ import java.io.Serializable;
  * @author mathew
  */
 public class Packet implements Serializable{
-    String SENDER_IP = "";
-    String SENDER_ID = null;
-    
-    Object PAYLOAD = null;
+
+    private Constants.Header headerType = null;
+    private final String senderIP = "";
+    private String senderID = null;
+    private Object payload = null;
+
+    public Constants.Header getHeaderType() {
+        return headerType;
+    }
+
+    public void setHeaderType(Constants.Header headerType) {
+        this.headerType = headerType;
+    }
+
+    public String getSenderIP() {
+        return senderIP;
+    }
+
+    public String getSenderID() {
+        return senderID;
+    }
+
+    public void setSenderID(String senderID) {
+        this.senderID = senderID;
+    }
+
+    public Object getPayload() {
+        return payload;
+    }
+
+    public void setPayload(Object payload) {
+        this.payload = payload;
+    }
+
 }
+

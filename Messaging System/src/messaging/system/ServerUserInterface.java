@@ -9,7 +9,6 @@ package messaging.system;
  *
  * @author mathew
  */
-public interface ServerUserInterface {
-    public void displayError(String title, String body);
+public interface ServerUserInterface extends MasterUserInterface{
     public void displayPort(int port);
 }
