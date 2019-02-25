@@ -10,8 +10,8 @@ public class ConsoleUtils {
     public void displayError(String title, String body) {
         List<String> msgs = new ArrayList<String>();
 
-        msgs.add("[Error]"); msgs.add(title);
-        msgs.add("Body:"); msgs.add(body);
+        msgs.add("[Woops]"); msgs.add(title);
+        msgs.add("-"); msgs.add(body);
 
         System.out.println(printMessageBox(msgs));
 
@@ -23,32 +23,52 @@ public class ConsoleUtils {
         System.out.println(printMessageBox(msg));
     }
 
-    public static String printMessageBox(List<String> messages){
-        List<String> formatted = trimLineLengths(messages, DEFAULT_BOX_SIZE);
-        formatted = trimCarriageReturns(formatted);
+    public static String printMessageBox(String flatString, int width){
+        List<String> single = new ArrayList<String>();
+        single.add(flatString);
+        return printMessageBox(single, width);
+    }
 
-        int width = DEFAULT_BOX_SIZE +2;
+    public static String printMessageBox(String flatString){
+        return printMessageBox(flatString, DEFAULT_BOX_SIZE);
+    }
+    public static String printMessageBox(List<String> messages){
+        return printMessageBox(messages, DEFAULT_BOX_SIZE);
+    }
+    public static String printMessageBox(List<String> messages, int width){
+        List<String> formatted = trimCarriageReturns(messages);
+        formatted = trimLineLengths(formatted, width);
+
+        width+=2;
         String append = "";
 
-        append+=(fillln(width,'-'));
+        append+=(fillln(width,'■'));
 
-        for(String s : formatted) append+=(printMiddleln(s , width, ' ', '|'));
+        for(String s : formatted) append+=(printMiddleln(s , width, ' ', '║'));
 
-        append+=(fillln(width,'-'));
+        append+=(fill(width,'═', '╚','╝'));
 
         return append;
     }
 
-    private static String fill(int amount, char filler){
+    private static String fill(int amount, char filler, char start, char end){
         String append = "";
         for(int i =0; i< amount; i++){
-            append += filler;
+            if(i ==0){
+                append+=start;
+            } else if (i== amount-1){
+                append+=end;
+            } else{
+                append += filler;
+            }
         }
         return append;
     }
-
     private static String fillln(int amount, char filler){
-        return fill(amount, filler) +'\n';
+        return fillln(amount, filler, filler, filler);
+    }
+    private static String fillln(int amount, char filler, char start, char end){
+        return fill(amount, filler, start, end) +'\n';
     }
     private static String printMiddle(String toPrint, int width, char filler, char sides){
         String append = "";

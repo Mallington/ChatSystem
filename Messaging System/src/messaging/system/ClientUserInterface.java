@@ -9,6 +9,6 @@ package messaging.system;
  *
  * @author mathew
  */
-public interface ClientUserInterface extends MasterUserInterface{
-    public void displayMessage(Message message);
+public interface ClientUserInterface  extends MasterUserInterface,  ChatRoomChangeListener{
+
 }

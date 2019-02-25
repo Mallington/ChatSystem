@@ -1,6 +1,8 @@
 package messaging.system;
 
-public class Message{
+import java.io.Serializable;
+
+public class Message implements Serializable {
     private String messageID = null;
     private String senderID = null;
     private String roomID = null;

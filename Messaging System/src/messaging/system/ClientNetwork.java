@@ -15,6 +15,8 @@ import java.net.ServerSocket;
 public class ClientNetwork extends NetworkUtils{
     
     private ClientUserInterface userInterface;
+    private boolean updateDB = false;
+    private int updatePeriodMillis = 250;
     
     public ClientNetwork(String serverAddress, int port, ClientUserInterface user){
         super(serverAddress, port, user);
@@ -27,11 +29,31 @@ public class ClientNetwork extends NetworkUtils{
         ServerSocket sock = new ServerSocket();
     }
 
+    private Runnable updaterTask = () ->{
+        while(updateDB){
+            
+
+            try{Thread.sleep(updatePeriodMillis);} catch(Exception e){}
+        }
+    };
+
+    public void startUpdaterTask(){
+        if(!updateDB){
+
+        }
+    }
+
+    public void stopUpdaterTask(){
+        updateDB = false;
+    }
+
     @Override
     Packet requestRecieved(Packet request) {
-        Packet returnPacket = new Packet();
-        returnPacket.setHeaderType(Constants.Header.UNEXPECTED_PACKET);
-
+        Packet returnPacket = new Packet(Constants.Header.UNEXPECTED_PACKET);
         return returnPacket;
+    }
+
+    public void setUpdatePeriodMillis(int updatePeriodMillis) {
+        this.updatePeriodMillis = updatePeriodMillis;
     }
 }

@@ -5,6 +5,7 @@
  */
 package messaging.system;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,19 +15,36 @@ import java.util.List;
  */
 public class ClientConsole extends ConsoleUtils implements ClientUserInterface{
 
-    @Override
-    public void displayMessage(Message message) {
+
+    private String displayMessage(Message message, String title, int width) {
+        List<String> components = new ArrayList<String>();
         if(message !=null){
-            List<String> components = new ArrayList<String>();
+            components.add(printMessageBox(title, width-4));
             components.add("UID: "+message.getSenderID());
             components.add("Room ID: "+message.getRoomID());
             components.add("Message ID: "+message.getMessageID());
             components.add("Message:");
             components.add(message.getBody());
-            System.out.println(ConsoleUtils.printMessageBox(components));
         }
         else{
-            this.displayError("Message not found", "[Message deleted]");
+            components.add("[Message Not Found]");
         }
+
+        return printMessageBox(components, width);
+    }
+
+
+    //NEED TO DO NEXT
+
+    @Override
+    public void update(Message oldMessage, Message newMessage) {
+        if(oldMessage == null && newMessage !=null){
+            System.out.println(displayMessage(newMessage, "New Message:", DEFAULT_BOX_SIZE));
+        }
+    }
+
+    @Override
+    public void update(User oldUser, User newUser) {
+
     }
 }

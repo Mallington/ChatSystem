@@ -18,6 +18,10 @@ public class Packet implements Serializable{
     private String senderID = null;
     private Object payload = null;
 
+    public Packet(Constants.Header headerType){
+        this.headerType = headerType;
+    }
+
     public Constants.Header getHeaderType() {
         return headerType;
     }
