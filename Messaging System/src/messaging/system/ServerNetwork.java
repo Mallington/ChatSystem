@@ -2,6 +2,7 @@ package messaging.system;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static messaging.system.Constants.Header.FAIL;
 import static messaging.system.Constants.Header.INVALID_HEADER;
@@ -24,16 +25,16 @@ public class ServerNetwork extends NetworkUtils {
             switch (request.getHeaderType()) {
 
                 case SEND_MESSAGE:
-                    serverUserInterface.printConsole("Request Type: "+request.getHeaderType()
-                            +"\nSender ID:"+request.getSenderID()
-                            +"\nPayload Type:"+((request.getPayload() !=null) ? request.getPayload().getClass().toString():"Payload Empty"));
-                    return new Packet(SUCCESS);
+                    return handleMessageUpdate(request);
 
                 case UPDATE_DB:
                     return handleUpdateDBRequest(request);
 
                 case UPDATE:
                     return handleUpdateRequest(request);
+
+                case CREATE_USER:
+                    return handleUserUpdate(request);
 
                 default:
                     return new Packet(INVALID_HEADER);
@@ -44,6 +45,43 @@ public class ServerNetwork extends NetworkUtils {
             return new Packet(FAIL);
         }
 
+    }
+
+    private Packet handleUserUpdate(Packet request){
+        if(request != null && request.getPayload() !=null){
+            try{
+                Packet response = new Packet(Constants.Header.SUCCESS);
+
+                User user= (User)request.getPayload();
+                response.setPayload(dataBase.updateUser(user));
+
+                return response;
+            }
+            catch(Exception e){
+                return new Packet(Constants.Header.FAIL);
+            }
+        }
+        else{
+            return new Packet(Constants.Header.FAIL);
+        }
+    }
+
+    private Packet handleMessageUpdate(Packet request){
+        if(request != null && request.getPayload() !=null){
+            try{
+                Packet response = new Packet(Constants.Header.SUCCESS);
+
+                Message message= (Message)request.getPayload();
+                dataBase.updateMessage(message);
+                return response;
+            }
+            catch(Exception e){
+                return new Packet(Constants.Header.FAIL);
+            }
+        }
+        else{
+            return new Packet(Constants.Header.FAIL);
+        }
     }
 
     private Packet handleUpdateRequest(Packet pack){

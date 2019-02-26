@@ -6,6 +6,8 @@ import java.util.List;
 
 public class ChatRoom implements Serializable {
     private String roomID = null;
+
+    private String name = "";
     private List<String> userIDS = new ArrayList<String>();
     private List<String> messageIDS = new ArrayList<String>();
 
@@ -13,9 +15,21 @@ public class ChatRoom implements Serializable {
         this.userIDS = userI;
         this.messageIDS = messageIDS;
     }
+    public ChatRoom(String roomID){
+        this.userIDS = new ArrayList<String>();
+        this.messageIDS = new ArrayList<String>();
+        this.roomID = roomID;
+    }
 
     public String getRoomID() {
         return roomID;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setRoomID(String roomID) {

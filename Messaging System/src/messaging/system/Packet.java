@@ -14,7 +14,6 @@ import java.io.Serializable;
 public class Packet implements Serializable{
 
     private Constants.Header headerType = null;
-    private final String senderIP = "";
     private String senderID = null;
     private Object payload = null;
 
@@ -28,10 +27,6 @@ public class Packet implements Serializable{
 
     public void setHeaderType(Constants.Header headerType) {
         this.headerType = headerType;
-    }
-
-    public String getSenderIP() {
-        return senderIP;
     }
 
     public String getSenderID() {

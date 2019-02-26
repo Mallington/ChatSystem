@@ -133,6 +133,10 @@ public abstract class NetworkUtils {
         serverAddress = address;
         return makeRequest(requestPacket);
     }
+    private Packet linePacket(Packet packet){
+        packet.setSenderID(Constants.getUserId());
+        return packet;
+    }
 
     public Packet makeRequest(Packet requestPacket){
         if (serverAddress != null) {
@@ -142,6 +146,7 @@ public abstract class NetworkUtils {
                     Socket sock = new Socket(serverAddress, this.port);
                     ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
                     sock.setSoTimeout(timeout);
+                    requestPacket = linePacket(requestPacket);
                     out.writeObject(requestPacket);
                     try {
                         sock.setSoTimeout(timeout);

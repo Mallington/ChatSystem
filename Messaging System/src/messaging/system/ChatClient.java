@@ -6,6 +6,7 @@
 package messaging.system;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -19,34 +20,35 @@ public class ChatClient {
 
 
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
-        
-        ClientConsole console = new ClientConsole();
-        Data db = new Data(console);
+
+        Data db = new Data();
+        ClientConsole console = new ClientConsole(db);
         db.addListener(console);
-        
-        ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort(), console);
-
-        Packet req = new Packet(Constants.Header.UPDATE);
-        req.setPayload("RR1");
-
-
+        //rr1
+        ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort(), console, db);
         client.setTimeout(5000);
 
-        try{
-            while (true) {
-                Packet resp = client.makeRequest(req);
-                ChatRoom ch = (ChatRoom) resp.getPayload();
-                db.updateAndFetchdDB(ch, client);
-                Thread.sleep(500);
-            }
+        User newUser = new User(null, "Mark Allington");
+        if(client.createUser(newUser)){
+            console.printConsole("User Created.");
         }
-        catch(Exception e){
-            console.displayError("FAIL", e.getLocalizedMessage());
+        else{
+            console.displayError("User Creation Failed", "Perhaps you do not have the right privileges");
         }
 
-        //request.setPayload(new Message());
+        client.startUpdaterTask();
 
+        Scanner sc = new Scanner(System.in);
 
+        while(true){
+            System.out.println("Type a message:");
+            String in = sc.nextLine();
+            Message toSend = new Message();
+            toSend.setBody(in);
+            toSend.setRoomID(Constants.DEFAULT_CHAT_ROOM_ID);
+            toSend.setSenderID(Constants.getUserId());
+            client.sendMessage(toSend);
+        }
 
 
 

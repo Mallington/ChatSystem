@@ -10,5 +10,4 @@ package messaging.system;
  * @author mathew
  */
 public interface ClientUserInterface  extends MasterUserInterface,  ChatRoomChangeListener{
-
 }
