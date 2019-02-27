@@ -13,18 +13,21 @@ import java.util.List;
  *
  * @author mathew
  */
-public class ClientConsole extends ConsoleUtils implements ClientUserInterface{
+public abstract class ClientConsole extends ConsoleUtils implements ClientUserInterface{
     private Data dataBase =null;
+    private ClientNetwork network = null;
 
-    public ClientConsole(Data dataBase){
-        this.dataBase = dataBase;
+    public ClientConsole(){
+        super.setMasterInterface(this);
     }
 
     private String displayMessage(Message message, int width) {
         List<String> components = new ArrayList<String>();
-        if(message !=null){
-            components.add("Sender: "+dataBase.getUserByID(message.getSenderID()).getDisplayName());
-            components.add("Chat Room: "+dataBase.getChatRoomByID(message.getRoomID()).getName());
+        if(message !=null && dataBase !=null){
+            User u = dataBase.getUserByID(message.getSenderID());
+            ChatRoom room = dataBase.getChatRoomByID(message.getRoomID());
+            components.add("Sender: "+((u == null)? message.getSenderID() :u.getDisplayName()));
+            components.add("Chat Room: "+((room == null)? message.getRoomID() :room.getName()));
             components.add("Message UID: "+message.getMessageID());
             components.add(printMessageBox(message.getBody(), width-4));
         }
@@ -35,8 +38,13 @@ public class ClientConsole extends ConsoleUtils implements ClientUserInterface{
         return printMessageBox(components, width);
     }
 
+    public Data getDataBase() {
+        return dataBase;
+    }
 
-    //NEED TO DO NEXT
+    public void setDataBase(Data dataBase) {
+        this.dataBase = dataBase;
+    }
 
     @Override
     public void update(Message oldMessage, Message newMessage) {
@@ -48,8 +56,13 @@ public class ClientConsole extends ConsoleUtils implements ClientUserInterface{
     @Override
     public void update(User oldUser, User newUser) {
         if(oldUser == null && newUser!=null){
-            System.out.println(printMessageBox("New user is online:\nDisplay Name: "+newUser.getDisplayName()+
+            System.out.println(printMessageBox("User is online:\nDisplay Name: "+newUser.getDisplayName()+
                     "\nUID: "+newUser.getUserID(),DEFAULT_BOX_SIZE));
         }
+    }
+
+    @Override
+    public void updateChatRoomList(List<ChatRoom> roomList) {
+
     }
 }

@@ -127,7 +127,6 @@ public class Data implements Serializable {
     }
 
     private void updateDB(UpdateResponceContainer update){
-
         for (User u : update.getUsers()) {
             for (ChatRoomChangeListener change : changeListeners) change.update(null, u);
             getUsers().add(u);
@@ -184,7 +183,8 @@ public class Data implements Serializable {
 
         }
         catch (Exception e){
-
+            System.out.println("Failed container update+ ");
+            e.printStackTrace();
         }
 
 

@@ -18,8 +18,8 @@ import java.net.SocketTimeoutException;
  * @author mathew
  */
 public abstract class NetworkUtils {
-    private  String serverAddress = null;
-    private int port = 0;
+    String serverAddress = null;
+    int port = 0;
     private int timeout = 2000;
     private int retryPeriod = 3000;
 
@@ -29,15 +29,13 @@ public abstract class NetworkUtils {
     private ServerSocket server= null;
     private boolean listen = false;
 
-    public NetworkUtils(int port, MasterUserInterface out){
+    public NetworkUtils(int port){
         this.port = port;
-        this.masterOutput = out;
     }
 
-    public NetworkUtils(String address, int port, MasterUserInterface out){
+    public NetworkUtils(String address, int port){
         this.serverAddress = address;
         this.port = port;
-        this.masterOutput = out;
     }
 
     public boolean initSocket(){
@@ -45,7 +43,7 @@ public abstract class NetworkUtils {
             server = new ServerSocket(this.port);
             return true;
         } catch (IOException e) {
-            masterOutput.displayError("Port already occupied", "Please stop all other instances of the server.");
+            if(masterOutput!=null) masterOutput.displayError("Port already occupied", "Please stop all other instances of the server.");
             return false;
         }
     }
@@ -55,19 +53,25 @@ public abstract class NetworkUtils {
             listen = true;
             while(!initSocket()){
                 try {
-                    masterOutput.printConsole("Retrying in "+(retryPeriod/1000.0)+" seconds ...");
+                    if(masterOutput!=null) masterOutput.printConsole("Retrying in "+(retryPeriod/1000.0)+" seconds ...");
                     Thread.sleep(retryPeriod);
                 } catch (InterruptedException e) {}
             }
-            masterOutput.printConsole("Server is open for business.");
+            if(masterOutput!=null) masterOutput.printConsole("Server is open for business.");
             new Thread(serverThread).start();
         }
         else{
-            masterOutput.printConsole("Network listener already running.");
+            if(masterOutput!=null) masterOutput.printConsole("Network listener already running.");
         }
     }
 
     public void stopListening(){
+        if(masterOutput !=null) masterOutput.printConsole("Stopping server thread");
+        try{
+            server.close();
+        }catch(Exception e){
+            if(masterOutput !=null)masterOutput.displayError("Server Thread","Failed to close");
+        }
         listen = false;
     }
 
@@ -78,20 +82,20 @@ public abstract class NetworkUtils {
                 new Thread(() -> handleRequest(sock)).start();
 
             } catch (IOException e) {
-                masterOutput.displayError("Port already occupied", "Please stop all over instances of the server.\nWill retry in a bit.");
+                if(listen) {
+                    if (masterOutput != null)
+                        masterOutput.displayError("Port already occupied", "Please stop all over instances of the server.\nWill retry in a bit.");
 
-                try {
-                    Thread.sleep(retryPeriod);
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
+                    try {
+                        Thread.sleep(retryPeriod);
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+
+                    if (masterOutput != null) masterOutput.printConsole("Retrying in ");
                 }
-                masterOutput.printConsole("Retrying in ");
             }
         }
-
-        try {
-            if(server !=null) server.close();
-        } catch (IOException e) {}
     };
     private boolean handleRequest(Socket sock){
         try{
@@ -126,6 +130,10 @@ public abstract class NetworkUtils {
         recordedMillis = System.currentTimeMillis();
     }
 
+    public void setMasterOutput(MasterUserInterface masterOutput) {
+        this.masterOutput = masterOutput;
+    }
+
     private boolean timeoutExceeded(){
         return (recordedMillis+timeout<System.currentTimeMillis());
     }
@@ -154,17 +162,18 @@ public abstract class NetworkUtils {
                         Packet ret = (Packet) in.readObject();
                         if(ret !=null) return ret;
                     } catch (ClassNotFoundException e) {
-                        masterOutput.displayError("Invalid Packet", "Ignoring incorrect object received");
+                        if(masterOutput!=null) masterOutput.displayError("Invalid Packet", "Ignoring incorrect object received");
                     }
                 } catch (IOException io) {
-                    masterOutput.displayError("Server Is not Available", "Retrying in " + (retryPeriod / 1000.0) + " seconds ...");
+                    if(masterOutput!=null) masterOutput.displayError("Server Is not Available", "Retrying in " + (retryPeriod / 1000.0) + " seconds ...");
                     try {
                         Thread.sleep(retryPeriod);
-                    } catch (Exception e) {}
+                    } catch (Exception e) {
+                    }
                 }
             }
         } else {
-            masterOutput.displayError("Null Error", "IP field is null.\nPlease ensure you have entered the server IP");
+            if(masterOutput!=null) masterOutput.displayError("Null Error", "IP field is null.\nPlease ensure you have entered the server IP");
             return null;
         }
     }

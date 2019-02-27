@@ -2,10 +2,36 @@ package messaging.system;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class ConsoleUtils {
+public abstract class ConsoleUtils {
 
     final static int DEFAULT_BOX_SIZE = 78;
+    private boolean captureConsoleInput = false;
+    private Scanner in = null;
+
+    private MasterUserInterface masterInterface = null;
+
+    public abstract void userInputted(String userInput, ConsoleUtils console);
+
+    private Runnable consoleListener = ()->{
+        in = new Scanner(System.in);
+        while(captureConsoleInput){
+            String input = in.nextLine();
+            userInputted(input, this);
+        }
+    };
+
+    public void startConsoleListener(){
+        captureConsoleInput = true;
+        new Thread(consoleListener).start();
+
+    }
+    public void stopConsoleListener(){
+        captureConsoleInput = false;
+        in.close();
+
+    }
 
     public void displayError(String title, String body) {
         List<String> msgs = new ArrayList<String>();
@@ -18,6 +44,7 @@ public class ConsoleUtils {
     }
 
     public void printConsole(String consoleMessage) {
+        if(consoleMessage == null) consoleMessage ="";
         List<String> msg = new ArrayList<String>();
         msg.add("[Console]"); msg.add(consoleMessage);
         System.out.println(printMessageBox(msg));
@@ -128,5 +155,9 @@ public class ConsoleUtils {
             }
         }
         return formatted;
+    }
+
+    public void setMasterInterface(MasterUserInterface masterInterface) {
+        this.masterInterface = masterInterface;
     }
 }

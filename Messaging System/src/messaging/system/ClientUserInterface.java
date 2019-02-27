@@ -5,9 +5,12 @@
  */
 package messaging.system;
 
+import java.util.List;
+
 /**
  *
  * @author mathew
  */
 public interface ClientUserInterface  extends MasterUserInterface,  ChatRoomChangeListener{
+    public void updateChatRoomList(List<ChatRoom> roomList);
 }

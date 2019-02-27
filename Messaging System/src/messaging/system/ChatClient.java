@@ -5,7 +5,6 @@
  */
 package messaging.system;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -22,13 +21,40 @@ public class ChatClient {
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
 
         Data db = new Data();
-        ClientConsole console = new ClientConsole(db);
-        db.addListener(console);
-        //rr1
-        ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort(), console, db);
+
+        ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort());
         client.setTimeout(5000);
 
-        User newUser = new User(null, "Mark Allington");
+        ClientConsole console = new ClientConsole() {
+            @Override
+            public void userInputted(String userInput, ConsoleUtils console) {
+                System.out.println("Switching \""+userInput+"\"");
+                switch (userInput) {
+                    case "EXIT":
+                        console.printConsole("Exiting...");
+                        client.stopUpdaterTask();
+                        console.stopConsoleListener();
+                        break;
+                    default:
+                        Message toSend = new Message();
+                        toSend.setBody(userInput);
+                        toSend.setRoomID(Constants.DEFAULT_CHAT_ROOM_ID);
+                        toSend.setSenderID(Constants.getUserId());
+                        client.sendMessage(toSend);
+                        break;
+
+
+                }
+            }
+        };
+
+        console.setDataBase(db);
+        db.addListener(console);
+
+        client.setUserInterface(console);
+        //rr1
+
+        User newUser = new User(null, "Mark Allington- "+(int)(Math.random()*9999));
         if(client.createUser(newUser)){
             console.printConsole("User Created.");
         }
@@ -36,19 +62,8 @@ public class ChatClient {
             console.displayError("User Creation Failed", "Perhaps you do not have the right privileges");
         }
 
-        client.startUpdaterTask();
-
-        Scanner sc = new Scanner(System.in);
-
-        while(true){
-            System.out.println("Type a message:");
-            String in = sc.nextLine();
-            Message toSend = new Message();
-            toSend.setBody(in);
-            toSend.setRoomID(Constants.DEFAULT_CHAT_ROOM_ID);
-            toSend.setSenderID(Constants.getUserId());
-            client.sendMessage(toSend);
-        }
+        client.startUpdaterTask(db);
+        console.startConsoleListener();
 
 
 

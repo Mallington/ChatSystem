@@ -14,34 +14,43 @@ import java.net.ServerSocket;
  */
 public class ClientNetwork extends NetworkUtils{
     
-    private ClientUserInterface userInterface;
+    private ClientUserInterface userInterface = null;
     private boolean updateDB = false;
     private int updatePeriodMillis = 250;
-    private Data dataBase;
+    private Data dataBase = null;
     
-    public ClientNetwork(String serverAddress, int port, ClientUserInterface user, Data dataBase){
-        super(serverAddress, port, user);
-        this.dataBase = dataBase;
-        this.userInterface = user;
-        userInterface.printConsole("Attempting to connect via \""+serverAddress+":"+""+port+"\" as \""+Constants.getUserId()+"\".");
+    public ClientNetwork(String serverAddress, int port){
+        super(serverAddress, port);
     }
     
     private void connect() throws IOException{
+        if(userInterface !=null)userInterface.printConsole("Attempting to connect via \""+serverAddress+":"+""+port+"\" as \""+Constants.getUserId()+"\".");
+
         ServerSocket sock = new ServerSocket();
+    }
+
+    public void setUserInterface(ClientUserInterface userInterface) {
+        this.userInterface = userInterface;
+        super.setMasterOutput(userInterface);
     }
 
     private Runnable updaterTask = () ->{
         while(updateDB){
+
             for(ChatRoom room :dataBase.getChatRooms()){
                 updateChatRoom(room);
             }
 
-            try{Thread.sleep(updatePeriodMillis);} catch(Exception e){updateDB = false;}
+            try{Thread.sleep(updatePeriodMillis);} catch(Exception e){
+                updateDB = false;
+                System.out.println("Updater thread died");
+            }
         }
     };
 
-    public void startUpdaterTask(){
+    public void startUpdaterTask(Data dataBase){
         if(!updateDB){
+            this.dataBase = dataBase;
             updateDB = true;
             new Thread(updaterTask).start();
         }
@@ -61,7 +70,7 @@ public class ClientNetwork extends NetworkUtils{
             dataBase.updateAndFetchdDB(ch, this);
         }
         catch(Exception e){
-            userInterface.displayError("Failed to update chat room","Server is being funny");
+            if(userInterface !=null) userInterface.displayError("Failed to update chat room","Server is being funny");
         }
     }
 
@@ -79,7 +88,7 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     public boolean createUser(User user){
-        Packet response = createResource(user, Constants.Header.CREATE_USER);
+        Packet response = createResource(user, Constants.Header.UPDATE_USER);
         try{
             if(response != null && response.getPayload()!=null){
                 Constants.setUserId((String)response.getPayload());
@@ -99,4 +108,6 @@ public class ClientNetwork extends NetworkUtils{
     public void setUpdatePeriodMillis(int updatePeriodMillis) {
         this.updatePeriodMillis = updatePeriodMillis;
     }
+
+
 }

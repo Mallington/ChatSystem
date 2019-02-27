@@ -1,6 +1,6 @@
 package messaging.system;
 
-public class ServerConsole extends ConsoleUtils implements ServerUserInterface{
+public abstract class ServerConsole extends ConsoleUtils implements ServerUserInterface{
 
     @Override
     public void displayPort(int port) {
