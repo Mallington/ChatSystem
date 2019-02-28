@@ -1,0 +1,15 @@
+.root{
+    -fx-fill: "#BBBBBB";
+    -fx-background-color: "#3C3F41";
+}
+.chat-room-list{
+
+}
+.chat-room-view{
+    -fx-background-color: "#2B2B2B";
+    -fx-fill: "#BABABA";
+}
+.title-box{
+    -fx-border-color: "#323232";
+    -fx-border-width: 1;
+}
