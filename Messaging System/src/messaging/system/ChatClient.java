@@ -17,6 +17,9 @@ public class ChatClient {
      */
     public static void main(String[] args) throws InterruptedException {
 
+        ClientGUI UI = new ClientGUI();
+
+        MainChatWindowController cl = UI.open();
 
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
 
