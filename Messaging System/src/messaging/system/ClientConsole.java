@@ -38,6 +38,7 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
         return printMessageBox(components, width);
     }
 
+
     public Data getDataBase() {
         return dataBase;
     }

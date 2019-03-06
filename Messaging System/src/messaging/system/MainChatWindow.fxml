@@ -45,7 +45,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <ListView prefHeight="379.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
+                  <ListView fx:id="channelList" prefHeight="379.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                      <styleClass>
                         <String fx:value="chat-room-list" />
                         <String fx:value="title-box" />
@@ -70,7 +70,10 @@
                   </ScrollPane>
                </children>
             </VBox>
-            <ListView style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" />
+            <AnchorPane fx:id="channelViewPane" prefWidth="538.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets top="52.0" />
+               </HBox.margin></AnchorPane>
             <VBox prefWidth="250.0" styleClass="chat-room-list">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" styleClass="title-box">
@@ -96,16 +99,19 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="175.0" prefHeight="69.0" prefWidth="1025.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="919.0" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox alignment="BOTTOM_CENTER" prefWidth="1200.0" VBox.vgrow="NEVER">
+                  <HBox alignment="BOTTOM_CENTER" prefWidth="1052.0" VBox.vgrow="NEVER">
                      <children>
-                        <TextField prefHeight="40.0" prefWidth="500.0" promptText="Message: &quot;Channel Name&quot;" styleClass="text-box" HBox.hgrow="ALWAYS">
+                        <TextField opacity="0.89" prefHeight="40.0" prefWidth="500.0" promptText="Message: &quot;Channel Name&quot;" styleClass="text-box" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets left="325.0" right="275.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </HBox>
                </children>
                <padding>

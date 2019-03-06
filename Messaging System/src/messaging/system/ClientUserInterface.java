@@ -13,4 +13,7 @@ import java.util.List;
  */
 public interface ClientUserInterface  extends MasterUserInterface,  ChatRoomChangeListener{
     public void updateChatRoomList(List<ChatRoom> roomList);
+    public Data getDataBase();
+
+    public void setDataBase(Data dataBase);
 }

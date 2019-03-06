@@ -19,19 +19,22 @@ public class ChatClient {
 
         ClientGUI UI = new ClientGUI();
 
-        MainChatWindowController cl = UI.open();
-
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
 
         Data db = new Data();
 
         ClientNetwork client = new ClientNetwork(Constants.getServerAddress(), Constants.getPort());
         client.setTimeout(5000);
+        ClientConsole consoleInst = null;
+        ClientUserInterface console;
 
-        ClientConsole console = new ClientConsole() {
+        boolean runConsole = false;
+
+    if(runConsole) {
+        consoleInst = new ClientConsole() {
             @Override
             public void userInputted(String userInput, ConsoleUtils console) {
-                System.out.println("Switching \""+userInput+"\"");
+                System.out.println("Switching \"" + userInput + "\"");
                 switch (userInput) {
                     case "EXIT":
                         console.printConsole("Exiting...");
@@ -50,6 +53,13 @@ public class ChatClient {
                 }
             }
         };
+        console = consoleInst;
+
+    }
+    else{
+        console = UI.open();
+    }
+
 
         console.setDataBase(db);
         db.addListener(console);
@@ -58,16 +68,18 @@ public class ChatClient {
         //rr1
 
         User newUser = new User(null, "Mark Allington- "+(int)(Math.random()*9999));
+        System.out.println("Creating user");
         if(client.createUser(newUser)){
+            System.out.println("Success");
             console.printConsole("User Created.");
         }
         else{
+            System.out.println("Not sucessful");
             console.displayError("User Creation Failed", "Perhaps you do not have the right privileges");
         }
 
         client.startUpdaterTask(db);
-        console.startConsoleListener();
-
+        if(consoleInst !=null) consoleInst.startConsoleListener();
 
 
     }

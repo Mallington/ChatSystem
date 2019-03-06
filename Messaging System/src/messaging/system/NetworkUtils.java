@@ -19,7 +19,7 @@ import java.net.SocketTimeoutException;
  */
 public abstract class NetworkUtils {
     String serverAddress = null;
-    int port = 0;
+    int port = -1;
     private int timeout = 2000;
     private int retryPeriod = 3000;
 
@@ -141,7 +141,7 @@ public abstract class NetworkUtils {
         serverAddress = address;
         return makeRequest(requestPacket);
     }
-    private Packet linePacket(Packet packet){
+    private Packet  linePacket(Packet packet){
         packet.setSenderID(Constants.getUserId());
         return packet;
     }

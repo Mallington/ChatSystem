@@ -40,6 +40,7 @@ public class ClientNetwork extends NetworkUtils{
             for(ChatRoom room :dataBase.getChatRooms()){
                 updateChatRoom(room);
             }
+            userInterface.updateChatRoomList(dataBase.getChatRooms());
 
             try{Thread.sleep(updatePeriodMillis);} catch(Exception e){
                 updateDB = false;
@@ -92,10 +93,10 @@ public class ClientNetwork extends NetworkUtils{
         try{
             if(response != null && response.getPayload()!=null){
                 Constants.setUserId((String)response.getPayload());
-
                 return (response.getHeaderType().equals(Constants.Header.SUCCESS));
             }
         } catch(Exception e){
+            System.out.println(e.getCause());
             return false;
         }
         return false;

@@ -1,7 +1,6 @@
 package messaging.system;
 
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -9,7 +8,11 @@ import java.io.IOException;
 
 public class ClientGUI extends Application{
 
-    private MainChatWindowController userInterface = null;
+    private static boolean initSemaphore =false;
+
+    private static MainChatWindowController userInterface = null;
+
+    private static boolean  userInterfaceSemaphore = true;
 
     @Override
     public void start(Stage primaryStage) {
@@ -19,7 +22,11 @@ public class ClientGUI extends Application{
             primaryStage.setMinHeight(400);
 
             primaryStage.setScene(new Scene(r.getNode()));
-            userInterface = r.loadController();
+            userInterfaceSemaphore = true;
+            setUserInterface(r.getController());
+            getUserInterface().channelName.setText("Loading...");
+
+            userInterfaceSemaphore = false;
 
             primaryStage.show();
         } catch (IOException e) {
@@ -27,8 +34,30 @@ public class ClientGUI extends Application{
         }
     }
 
+    private synchronized MainChatWindowController getUserInterface() {
+        return ClientGUI.userInterface;
+    }
+
+    private static synchronized void setUserInterface(MainChatWindowController userInterface) {
+        ClientGUI.userInterface = userInterface;
+    }
+
     public MainChatWindowController open(){
-        launch(null);
-        return userInterface;
+
+        while(initSemaphore);
+        initSemaphore = true;
+        userInterfaceSemaphore = true;
+        new Thread(()->launch(null)).start();
+
+        while(userInterfaceSemaphore) {
+            try {
+                Thread.sleep((int)(Math.random()*100));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        MainChatWindowController clientUI = getUserInterface();
+        initSemaphore = false;
+        return clientUI;
     }
 }

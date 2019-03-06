@@ -21,6 +21,8 @@ public class Resource<ControllerType> {
 
     private FXMLLoader LOADER;
     private String RESOURCE;
+    private Parent node = null;
+    private ControllerType controller = null;
 
     /**
      * Upon initialisation it stores the resource and creates a new FXML loader
@@ -28,23 +30,24 @@ public class Resource<ControllerType> {
      * @param res FXML page to be loaded
      */
     public Resource(String res) {
-
-        System.out.println("Path to resource " + getClass().getResource(res).getPath());
         LOADER = new FXMLLoader();
-        // LOADER.setRoot(null);
-        // LOADER.setLocation(getClass().getResource(res));
         RESOURCE = res;
+        try {
+            getNode();
+        } catch (IOException e) {
+            System.out.println("Failed to fetch node");
+        }
     }
 
     /**
      * Loads the resource file an outputs as a node to be loaded into a Stage/
-     * Window
+     * Parent node
      *
      * @return Node to be loaded
      * @throws IOException
      */
     public Parent getNode() throws IOException {
-        return LOADER.load(getClass().getResource(RESOURCE).openStream());
+        return (node ==null) ?(node = LOADER.load(getClass().getResource(RESOURCE).openStream())) : node;
     }
 
     /**
@@ -53,11 +56,13 @@ public class Resource<ControllerType> {
      * @return Controller instance
      * @throws IOException
      */
-    public ControllerType loadController() throws IOException {
+    public ControllerType getController() throws IOException {
 
-        ControllerType controller = LOADER.getController();
+        return (controller ==null) ? (controller = LOADER.getController()) : controller;
+    }
 
-        return controller;
+    public void setRoot(Object root){
+        LOADER.setRoot(root);
     }
 
 }
