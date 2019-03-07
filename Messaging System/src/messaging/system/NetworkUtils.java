@@ -6,12 +6,10 @@
 package messaging.system;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketTimeoutException;
 
 /**
  *
@@ -28,6 +26,7 @@ public abstract class NetworkUtils {
 
     private ServerSocket server= null;
     private boolean listen = false;
+    private boolean networkClosed = false;
 
     public NetworkUtils(int port){
         this.port = port;
@@ -36,6 +35,14 @@ public abstract class NetworkUtils {
     public NetworkUtils(String address, int port){
         this.serverAddress = address;
         this.port = port;
+    }
+
+    public synchronized boolean isNetworkClosed() {
+        return networkClosed;
+    }
+
+    public synchronized void setNetworkClosed(boolean networkClosed) {
+        this.networkClosed = networkClosed;
     }
 
     public boolean initSocket(){
@@ -149,7 +156,7 @@ public abstract class NetworkUtils {
     public Packet makeRequest(Packet requestPacket){
         if (serverAddress != null) {
             Packet responce = null;
-            while(true) {
+            while(!isNetworkClosed()) {
                 try {
                     Socket sock = new Socket(serverAddress, this.port);
                     ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
@@ -176,6 +183,7 @@ public abstract class NetworkUtils {
             if(masterOutput!=null) masterOutput.displayError("Null Error", "IP field is null.\nPlease ensure you have entered the server IP");
             return null;
         }
+        return null;
     }
 
 }

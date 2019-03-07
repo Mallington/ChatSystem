@@ -16,9 +16,16 @@ public abstract class ConsoleUtils {
 
     private Runnable consoleListener = ()->{
         in = new Scanner(System.in);
-        while(captureConsoleInput){
-            String input = in.nextLine();
-            userInputted(input, this);
+        while(captureConsoleInput) {
+            try{
+            if(in.hasNext()){
+                String input = in.nextLine();
+                userInputted(input, this);
+            }
+
+        } catch(Exception e){
+                System.out.println("fail");
+            }
         }
     };
 
@@ -155,6 +162,22 @@ public abstract class ConsoleUtils {
             }
         }
         return formatted;
+    }
+
+    public static boolean getYesNoChoice(String question){
+        System.out.println(printMessageBox(question+"\nEnter Yes or No (Y/N): "));
+        Scanner sc = new Scanner(System.in);
+
+        while(true) {
+            String line = sc.next();
+            if(line.equalsIgnoreCase("Yes")||line.equalsIgnoreCase("Y")){
+                return true;
+            } else if(line.equalsIgnoreCase("No")||line.equalsIgnoreCase("N")){
+                return false;
+            } else{
+                System.out.println(printMessageBox("\""+line+"\" is an invalid choice\nEnter Yes or No (Y/N): "));
+            }
+        }
     }
 
     public void setMasterInterface(MasterUserInterface masterInterface) {

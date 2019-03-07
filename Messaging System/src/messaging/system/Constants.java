@@ -20,6 +20,8 @@ public class Constants {
 
     private static String USER_ID = "GUEST";
 
+    private static Boolean RUN_GUI = null;
+
     public enum NodeType {
         ChatServer, ChatClient
     }
@@ -47,7 +49,8 @@ public class Constants {
 
                 parser.add(new Parameter("ccp", false))
                         .add(new Parameter("cca", false))
-                        .add(new Parameter("user", false));
+                        .add(new Parameter("user", false))
+                        .add(new Parameter("GUI", false));
                 String ccaArg = null;
                 Integer ccpArg = null;
 
@@ -61,6 +64,12 @@ public class Constants {
                 }
                 if (sucessfulParse && (ccaArg = parser.getID("user").getValue()) != null) {
                     USER_ID = ccaArg;
+                }
+                if (sucessfulParse && (ccaArg = parser.getID("GUI").getValue()) != null) {
+                    try{
+                        RUN_GUI = Boolean.parseBoolean(ccaArg);
+                    }
+                    catch(Exception e){}
                 }
                 break;
         }
@@ -78,5 +87,9 @@ public class Constants {
 
     public static void setUserId(String userId) {
         USER_ID = userId;
+    }
+
+    public static Boolean getRunGui() {
+        return RUN_GUI;
     }
 }

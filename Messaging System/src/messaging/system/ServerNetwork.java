@@ -3,9 +3,6 @@ package messaging.system;
 import java.util.ArrayList;
 import java.util.List;
 
-import static messaging.system.Constants.Header.FAIL;
-import static messaging.system.Constants.Header.INVALID_HEADER;
-import static messaging.system.Constants.Header.SUCCESS;
 
 public class ServerNetwork extends NetworkUtils {
 
@@ -38,11 +35,11 @@ public class ServerNetwork extends NetworkUtils {
                     return handleUserLoginRequest(request);
 
                 default:
-                    return new Packet(INVALID_HEADER);
+                    return new Packet(Constants.Header.INVALID_HEADER);
             }
         } catch (Exception e) {
             if(serverUserInterface!=null) serverUserInterface.displayError("Packet Parse Error", e.getLocalizedMessage());
-            return new Packet(FAIL);
+            return new Packet(Constants.Header.FAIL);
         }
 
     }
@@ -86,12 +83,12 @@ public class ServerNetwork extends NetworkUtils {
     private Packet handleUpdateRequest(Packet pack) {
 
         try {
-            Packet response = new Packet(SUCCESS);
+            Packet response = new Packet(Constants.Header.SUCCESS);
             String roomID = (String) pack.getPayload();
             response.setPayload(dataBase.getChatRoomByID(roomID));
             return response;
         } catch (Exception e) {
-            return new Packet(FAIL);
+            return new Packet(Constants.Header.FAIL);
         }
 
     }
@@ -112,21 +109,21 @@ public class ServerNetwork extends NetworkUtils {
                 for (User u : dataBase.getUsers()) if (u.getUserID().equals(id)) users.add(u);
             }
 
-            Packet response = new Packet(SUCCESS);
+            Packet response = new Packet(Constants.Header.SUCCESS);
             response.setPayload(new UpdateResponceContainer(users, messages));
             return response;
 
         } catch (Exception e) {
-            return new Packet(FAIL);
+            return new Packet(Constants.Header.FAIL);
         }
 
     }
 
     public Packet handleUserLoginRequest(Packet request) {
-        Packet response = new Packet(FAIL);
+        Packet response = new Packet(Constants.Header.FAIL);
         try {
             if (dataBase.containsUser(request.toString())) {
-                response = new Packet(SUCCESS);
+                response = new Packet(Constants.Header.SUCCESS);
             }
         }
            catch(Exception e){

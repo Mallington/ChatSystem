@@ -35,10 +35,10 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     private Runnable updaterTask = () ->{
-        while(updateDB){
+        while(updateDB && !isNetworkClosed()){
 
             for(ChatRoom room :dataBase.getChatRooms()){
-                updateChatRoom(room);
+                if(!isNetworkClosed()) updateChatRoom(room);
             }
             userInterface.updateChatRoomList(dataBase.getChatRooms());
 
@@ -71,7 +71,7 @@ public class ClientNetwork extends NetworkUtils{
             dataBase.updateAndFetchdDB(ch, this);
         }
         catch(Exception e){
-            if(userInterface !=null) userInterface.displayError("Failed to update chat room","Server is being funny");
+            if(userInterface !=null && !isNetworkClosed()) userInterface.displayError("Failed to update chat room","Server is being funny");
         }
     }
 

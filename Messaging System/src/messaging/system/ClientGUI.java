@@ -42,12 +42,12 @@ public class ClientGUI extends Application{
         ClientGUI.userInterface = userInterface;
     }
 
-    public MainChatWindowController open(){
+    public MainChatWindowController open(String[] args){
 
         while(initSemaphore);
         initSemaphore = true;
         userInterfaceSemaphore = true;
-        new Thread(()->launch(null)).start();
+        new Thread(()->launch(args)).start();
 
         while(userInterfaceSemaphore) {
             try {

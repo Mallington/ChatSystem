@@ -40,7 +40,6 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Init Main Chat Controller");
 
         channelListController = new CustomListCellController<MessageComponent>(channelList);
         for(int i =0; i< 10; i++){

@@ -1,13 +1,8 @@
 package messaging.system;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.URL;
 
+import java.io.IOException;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.stage.Popup;
 
 /**
  * This class provides a way of loading a FXML page and getting its attached
@@ -32,6 +27,7 @@ public class Resource<ControllerType> {
     public Resource(String res) {
         LOADER = new FXMLLoader();
         RESOURCE = res;
+
         try {
             getNode();
         } catch (IOException e) {
