@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -23,7 +24,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
     TextFlow consoleOutput = new TextFlow();
 
     @FXML
-    Pane channelViewPane = new Pane();
+    AnchorPane channelViewPane = new AnchorPane();
 
     public CustomListCellController<MessageComponent> channelListController = null;
     @FXML
@@ -94,10 +95,13 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         ChannelViewComponent comp;
 
         if((comp =getChannelViewByID(currentViewID))!=null ){
+
             channelName.setText(comp.getChatRoom().getName());
             ObservableList<Node> nodeList = channelViewPane.getChildren();
             nodeList.remove(0, nodeList.size());
             try {
+                comp.getNode().setLayoutX(channelViewPane.getParent().getLayoutX());
+                comp.getNode().setLayoutY(channelViewPane.getParent().getLayoutY());
                 nodeList.add(comp.getNode());
             } catch (IOException e) {
                 displayError("Node Update Failed", "ChannelID: "+currentViewID);

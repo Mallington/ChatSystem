@@ -6,11 +6,15 @@
 package messaging.system;
 
 /**
+ * Main entry point for loading the chat server
  *
  * @author mathew
  */
 public class ChatServer {
     /**
+     * Parameters
+     * -csp (Optional): The port that the server will load on.
+     *
      * @param args the command line arguments
      */
    static Data db;

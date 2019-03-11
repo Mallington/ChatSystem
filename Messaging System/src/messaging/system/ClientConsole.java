@@ -10,17 +10,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class is responsible for displaying messages to the commandline, as well as notifying the user
+ * of new people online
  *
  * @author mathew
  */
 public abstract class ClientConsole extends ConsoleUtils implements ClientUserInterface{
+    /**
+     * Contains a pointer to the data base instance
+     */
     private Data dataBase =null;
-    private ClientNetwork network = null;
 
+    /**
+     * Instantiates a new Client console.
+     */
     public ClientConsole(){
         super.setMasterInterface(this);
     }
 
+    /**
+     * Displays a message box containing the contents of a message.
+     *
+     * @param message the message object
+     * @param width   the width of the message box
+     * @return the string form of the message box ready to be printed
+     */
     private String displayMessage(Message message, int width) {
         List<String> components = new ArrayList<String>();
         if(message !=null && dataBase !=null){
@@ -38,15 +52,25 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
         return printMessageBox(components, width);
     }
 
-
+    /**
+     * See interface class for documentation
+     */
+    @Override
     public Data getDataBase() {
         return dataBase;
     }
 
+    /**
+     * See interface class for documentation
+     */
+    @Override
     public void setDataBase(Data dataBase) {
         this.dataBase = dataBase;
     }
 
+    /**
+     * See interface class for documentation
+     */
     @Override
     public void update(Message oldMessage, Message newMessage) {
         if(oldMessage == null && newMessage !=null){
@@ -54,6 +78,9 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
         }
     }
 
+    /**
+     * See interface class for documentation
+     */
     @Override
     public void update(User oldUser, User newUser) {
         if(oldUser == null && newUser!=null){
@@ -62,6 +89,9 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
         }
     }
 
+    /**
+     * See interface class for documentation
+     */
     @Override
     public void updateChatRoomList(List<ChatRoom> roomList) {
 

@@ -29,6 +29,10 @@ public class Resource<ControllerType> {
         RESOURCE = res;
 
         try {
+
+
+
+
             getNode();
         } catch (IOException e) {
             System.out.println("Failed to fetch node");
