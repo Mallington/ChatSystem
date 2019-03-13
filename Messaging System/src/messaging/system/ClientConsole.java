@@ -25,7 +25,6 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
      * Instantiates a new Client console.
      */
     public ClientConsole(){
-        super.setMasterInterface(this);
     }
 
     /**

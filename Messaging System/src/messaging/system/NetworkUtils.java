@@ -12,6 +12,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
+ * The type Network utils.
  *
  * @author mathew
  */
@@ -20,6 +21,8 @@ public abstract class NetworkUtils {
     int port = -1;
     private int timeout = 2000;
     private int retryPeriod = 3000;
+
+    private boolean connectionLost = false;
 
     private long recordedMillis = 0;
     private MasterUserInterface masterOutput = null;
@@ -167,12 +170,16 @@ public abstract class NetworkUtils {
                         sock.setSoTimeout(timeout);
                         ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
                         Packet ret = (Packet) in.readObject();
+                        connectionLost = false;
                         if(ret !=null) return ret;
                     } catch (ClassNotFoundException e) {
                         if(masterOutput!=null) masterOutput.displayError("Invalid Packet", "Ignoring incorrect object received");
                     }
                 } catch (IOException io) {
-                    if(masterOutput!=null) masterOutput.displayError("Server Is not Available", "Retrying in " + (retryPeriod / 1000.0) + " seconds ...");
+                    if(masterOutput!=null) {
+                        connectionLost = true;
+                        masterOutput.displayError("Server Is not Available", "Retrying in " + (retryPeriod / 1000.0) + " seconds ...");
+                    }
                     try {
                         Thread.sleep(retryPeriod);
                     } catch (Exception e) {
@@ -181,9 +188,14 @@ public abstract class NetworkUtils {
             }
         } else {
             if(masterOutput!=null) masterOutput.displayError("Null Error", "IP field is null.\nPlease ensure you have entered the server IP");
+            connectionLost = false;
             return null;
         }
+        connectionLost = false;
         return null;
     }
 
+    public boolean isConnectionLost() {
+        return connectionLost;
+    }
 }

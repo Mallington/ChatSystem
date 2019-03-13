@@ -38,6 +38,8 @@ public class ChatServer {
                 }
             }
         };
+
+        serverConsole.printConsole(Constants.SERVER_ASCII);
         serverConsole.startConsoleListener();
 
         server.setServerUserInterface(serverConsole);

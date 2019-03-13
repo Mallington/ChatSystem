@@ -7,8 +7,17 @@ import javafx.util.Callback;
 
 import java.io.IOException;
 
+/**
+ * This class is a custom ListCell controller which creates a neat interface to be able to add custom
+ * components such as message boxes to the list view by overriding the ListCell operations
+ *
+ * @param <Component> component must be a Resource type and is the component to be added
+ */
 class CustomListCellController <Component extends Resource>extends ListCell<Component> {
 
+    /**
+     * The list view to be 
+     */
     private ListView<Component> listView;
     private CustomListCellController<Component> inst;
 

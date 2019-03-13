@@ -33,6 +33,11 @@ public class ClientNetwork extends NetworkUtils{
     private Data dataBase = null;
 
     /**
+     * The thread on which the updater task is run.
+     */
+    private Thread updaterThread = null;
+
+    /**
      * Instantiates a new Client network.
      *
      * @param serverAddress the server address
@@ -63,10 +68,10 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * The Updater task.
+     * Runnable runs on an new thread when the listener is requested
      */
     private Runnable updaterTask = () ->{
-        while(updateDB && !isNetworkClosed()){
+        while(updateDB && !isNetworkClosed() && !updaterThread.isInterrupted()){
 
             for(ChatRoom room :dataBase.getChatRooms()){
                 if(!isNetworkClosed()) updateChatRoom(room);
@@ -81,7 +86,9 @@ public class ClientNetwork extends NetworkUtils{
     };
 
     /**
-     * Start updater task.
+     * Starts the updater task. This task regularly requests updates from the server regarding the status of
+     * particular chat rooms that is knows about. If any messages, users need to be update or added then this
+     * will be done on the update thread.
      *
      * @param dataBase the data base
      */
@@ -89,19 +96,20 @@ public class ClientNetwork extends NetworkUtils{
         if(!updateDB){
             this.dataBase = dataBase;
             updateDB = true;
-            new Thread(updaterTask).start();
+            (updaterThread = new Thread(updaterTask)) .start();
         }
     }
 
     /**
-     * Stop updater task.
+     * Stops the updater task
      */
     public void stopUpdaterTask(){
         updateDB = false;
+        //updaterThread.interrupt();
     }
 
     /**
-     * Update chat room.
+     * Updates the status of the chat room by making a request to the server
      *
      * @param room the room
      */
@@ -119,6 +127,14 @@ public class ClientNetwork extends NetworkUtils{
         }
     }
 
+    /**
+     * In this implementation, a packet should not be expected. Hence an 'UNEXPECTED_PACKET' is sent back.
+     * This particular part of the protocol can be used when scanning for available servers on the network,
+     * an unexpected packet would tell the scanner that this is in fact a client, not a server.
+     * @param request Recieved packet
+     * @return Outgoing packet
+     */
+
     @Override
     Packet requestRecieved(Packet request) {
         Packet returnPacket = new Packet(Constants.Header.UNEXPECTED_PACKET);
@@ -126,11 +142,11 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * Create resource packet.
+     * Loads a packet with payloads such as User and Message and objects
      *
-     * @param resource the resource
-     * @param header   the header
-     * @return the packet
+     * @param resource the object to be loaded
+     * @param header   the header which denotes the type of resource the server should expect
+     * @return the loaded packet
      */
     private Packet createResource(Object resource, Constants.Header header){
         Packet request = new Packet(header);
@@ -140,10 +156,10 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * Create user boolean.
+     * Sends a request to the server, asking it whether the client can make a new user
      *
-     * @param user the user
-     * @return the boolean
+     * @param user the user to be made
+     * @return the boolean denote whether the operation was successful
      */
     public boolean createUser(User user){
         Packet response = createResource(user, Constants.Header.UPDATE_USER);
@@ -160,10 +176,10 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * Send message boolean.
+     * Sends a message request to the server
      *
-     * @param message the message
-     * @return the boolean
+     * @param message the message to be sent
+     * @return whether the message request was successful
      */
     public boolean sendMessage(Message message){
         Packet response = (createResource(message, Constants.Header.SEND_MESSAGE));
@@ -171,9 +187,9 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * Sets update period millis.
+     * Sets update period millis
      *
-     * @param updatePeriodMillis the update period millis
+     * @param updatePeriodMillis the update period in milliseconds
      */
     public void setUpdatePeriodMillis(int updatePeriodMillis) {
         this.updatePeriodMillis = updatePeriodMillis;

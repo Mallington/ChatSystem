@@ -4,24 +4,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Methods associated with input and output on the user console
+ */
 public abstract class ConsoleUtils {
 
+    /**
+     * The constant DEFAULT_BOX_SIZE is the default character width of a message box
+     */
     final static int DEFAULT_BOX_SIZE = 78;
+
+    /**
+     * Whether or not the listener process should keep accepting input
+     */
     private boolean captureConsoleInput = false;
-    private Scanner in = null;
 
-    private MasterUserInterface masterInterface = null;
+    /**
+     * Used for taking scanner input
+     */
+    private Scanner scanner = null;
 
+    /**
+     * The thread on which the console listener is run
+     */
+    private Thread consoleListenerThread = null;
+
+
+    /**
+     * This method lets the implementing class know that input from the console has been captured.
+     *
+     * @param userInput the string inputted by the user
+     * @param console   the console interface it was inputted on
+     */
     public abstract void userInputted(String userInput, ConsoleUtils console);
 
+    /**
+     * This runnable takes user input from the console and notifies the implementing class via 'userInputted(..)'
+     */
     private Runnable consoleListener = ()->{
-        in = new Scanner(System.in);
-        while(captureConsoleInput) {
+        scanner = new Scanner(System.in);
+        while(captureConsoleInput && !consoleListenerThread.isInterrupted()) {
             try{
-            if(in.hasNext()){
-                String input = in.nextLine();
-                userInputted(input, this);
-            }
+                userInputted(scanner.nextLine(), this);
 
         } catch(Exception e){
                 System.out.println("fail");
@@ -29,27 +53,48 @@ public abstract class ConsoleUtils {
         }
     };
 
+    /**
+     * Starts the  console listener.
+     */
     public void startConsoleListener(){
-        captureConsoleInput = true;
-        new Thread(consoleListener).start();
+        if(!captureConsoleInput) {
+            captureConsoleInput = true;
+            (consoleListenerThread = new Thread(consoleListener)).start();
+        }
 
     }
+
+    /**
+     * Stop the console listener.
+     */
     public void stopConsoleListener(){
         captureConsoleInput = false;
-        in.close();
+        scanner.close();
+        consoleListenerThread.interrupt();
 
     }
 
+    /**
+     * Displays an error message in a nicely formatted box
+     *
+     * @param title the title of the error
+     * @param body  the body of the message
+     */
     public void displayError(String title, String body) {
         List<String> msgs = new ArrayList<String>();
 
-        msgs.add("[Woops]"); msgs.add(title);
+        msgs.add("[Dammit]"); msgs.add(title);
         msgs.add("-"); msgs.add(body);
 
         System.out.println(printMessageBox(msgs));
 
     }
 
+    /**
+     * Prints a console in a nicely formatted box
+     *
+     * @param consoleMessage the text to be displayed
+     */
     public void printConsole(String consoleMessage) {
         if(consoleMessage == null) consoleMessage ="";
         List<String> msg = new ArrayList<String>();
@@ -57,18 +102,46 @@ public abstract class ConsoleUtils {
         System.out.println(printMessageBox(msg));
     }
 
+    /**
+     * Prints a message box with a string inside
+     *
+     * @param flatString the flat string to be printed
+     * @param width      the width of the box
+     * @return the string representation of the box
+     */
     public static String printMessageBox(String flatString, int width){
         List<String> single = new ArrayList<String>();
         single.add(flatString);
         return printMessageBox(single, width);
     }
 
+    /**
+     * Prints a message box of fixed width specified by DEFAULT_BOX_SIZE
+     *
+     * @param flatString the flat string to be printed
+     * @return the string representation of the box
+     */
     public static String printMessageBox(String flatString){
         return printMessageBox(flatString, DEFAULT_BOX_SIZE);
     }
+
+    /**
+     * Prints out an array of strings in a box of fixed width specified by DEFAULT_BOX SIZE
+     *
+     * @param messages list of lines to be printed
+     * @return the string representation of the box
+     */
     public static String printMessageBox(List<String> messages){
         return printMessageBox(messages, DEFAULT_BOX_SIZE);
     }
+
+    /**
+     * Prints out an array of strings in a box with custom width
+     *
+     * @param messages list of lines to be printed
+     * @param width    the width of the message box
+     * @return the string representation of the box
+     */
     public static String printMessageBox(List<String> messages, int width){
         List<String> formatted = trimCarriageReturns(messages);
         formatted = trimLineLengths(formatted, width);
@@ -85,6 +158,15 @@ public abstract class ConsoleUtils {
         return append;
     }
 
+    /**
+     * Fills a line with a set amount of characters, used for building the top and bottom bars of message bars
+     *
+     * @param amount the character width of the line
+     * @param filler Default fill character
+     * @param start  the start character
+     * @param end    the end character
+     * @return the string representation of the newly built line
+     */
     private static String fill(int amount, char filler, char start, char end){
         String append = "";
         for(int i =0; i< amount; i++){
@@ -98,12 +180,38 @@ public abstract class ConsoleUtils {
         }
         return append;
     }
-    private static String fillln(int amount, char filler){
-        return fillln(amount, filler, filler, filler);
-    }
+
+    /**
+     * Alternative implementation to fill() with a carriage return
+     *
+     * @param amount the character width of the line
+     * @param filler Default fill character
+     * @param start  the start character
+     * @param end    the end character
+     * @return the string representation of the newly built line
+     */
     private static String fillln(int amount, char filler, char start, char end){
         return fill(amount, filler, start, end) +'\n';
     }
+    /**
+     * Alternative implementation of fillln() with all characters being the same
+     *
+     * @param amount the character width of the line
+     * @param filler Default fill character
+     * @return the string representation of the newly built line
+     */
+    private static String fillln(int amount, char filler){
+        return fillln(amount, filler, filler, filler);
+    }
+
+    /**
+     * Prints a centered string with (end-start) positions denoting the width parameter
+     * @param toPrint String to print
+     * @param width Width of the box
+     * @param filler Empty characters
+     * @param sides Sided characters
+     * @return the string representation of the newly built line
+     */
     private static String printMiddle(String toPrint, int width, char filler, char sides){
         String append = "";
         if(toPrint ==null) toPrint = "null";
@@ -126,10 +234,19 @@ public abstract class ConsoleUtils {
         return append;
     }
 
+    /**
+     * Alternative implementation, same as printMiddleln +"\n"
+     */
     private static String printMiddleln(String toPrint, int width, char filler, char sides){
         return (printMiddle(toPrint, width, filler, sides) + '\n');
     }
 
+    /**d
+     * If any carriage returns are detected, this method splits the string up into separate elements
+     * in the array
+     * @param strings strings to be separated
+     * @return formatted array
+     */
     private static List<String> trimCarriageReturns(List<String> strings){
         List<String> lineFormatted = new ArrayList<String>();
 
@@ -149,6 +266,12 @@ public abstract class ConsoleUtils {
         return lineFormatted;
     }
 
+    /**
+     * Each string is trimmed to a max size, any spillages that occur are placed in the proceeding element of the array
+     * @param strings to be trimmed
+     * @param maxSize max size
+     * @return formatted array
+     */
     private static List<String> trimLineLengths(List<String> strings, int maxSize){
         List<String> formatted = new ArrayList<String>();
 
@@ -164,6 +287,12 @@ public abstract class ConsoleUtils {
         return formatted;
     }
 
+    /**
+     * Queries the user for a yes or or response
+     *
+     * @param question the question to be asked
+     * @return User response : True - yes, False - no
+     */
     public static boolean getYesNoChoice(String question){
         System.out.println(printMessageBox(question+"\nEnter Yes or No (Y/N): "));
         Scanner sc = new Scanner(System.in);
@@ -178,9 +307,5 @@ public abstract class ConsoleUtils {
                 System.out.println(printMessageBox("\""+line+"\" is an invalid choice\nEnter Yes or No (Y/N): "));
             }
         }
-    }
-
-    public void setMasterInterface(MasterUserInterface masterInterface) {
-        this.masterInterface = masterInterface;
     }
 }

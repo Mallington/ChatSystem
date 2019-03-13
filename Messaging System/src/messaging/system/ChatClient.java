@@ -36,6 +36,7 @@ public class ChatClient {
             Data db = new Data();
 
             ClientConsole consoleInst = ClientUtils.initConsole(client);
+            consoleInst.printConsole(Constants.CLIENT_ASCII);
 
             if (consoleInst != null) {consoleInst.startConsoleListener();}
 
