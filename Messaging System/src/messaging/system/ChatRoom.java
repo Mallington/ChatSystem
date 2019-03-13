@@ -31,7 +31,7 @@ public class ChatRoom implements Serializable {
      * Instantiates a new Chat room.
      *
      * @param userIDS the user IDs
-     * @param messageIDS the message IDs
+     * @param messageIDS the peopleOnline IDs
      */
     public ChatRoom(List<String> userIDS, List<String> messageIDS) {
         this.userIDS = userIDS;
@@ -104,18 +104,18 @@ public class ChatRoom implements Serializable {
     }
 
     /**
-     * Gets message ids.
+     * Gets peopleOnline ids.
      *
-     * @return the message ids
+     * @return the peopleOnline ids
      */
     public List<String> getMessageIDS() {
         return messageIDS;
     }
 
     /**
-     * Sets message ids.
+     * Sets peopleOnline ids.
      *
-     * @param messageIDS the message ids
+     * @param messageIDS the peopleOnline ids
      */
     public void setMessageIDS(List<String> messageIDS) {
         this.messageIDS = messageIDS;

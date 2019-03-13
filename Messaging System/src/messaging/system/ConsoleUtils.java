@@ -10,7 +10,7 @@ import java.util.Scanner;
 public abstract class ConsoleUtils {
 
     /**
-     * The constant DEFAULT_BOX_SIZE is the default character width of a message box
+     * The constant DEFAULT_BOX_SIZE is the default character width of a peopleOnline box
      */
     final static int DEFAULT_BOX_SIZE = 78;
 
@@ -75,10 +75,10 @@ public abstract class ConsoleUtils {
     }
 
     /**
-     * Displays an error message in a nicely formatted box
+     * Displays an error peopleOnline in a nicely formatted box
      *
      * @param title the title of the error
-     * @param body  the body of the message
+     * @param body  the body of the peopleOnline
      */
     public void displayError(String title, String body) {
         List<String> msgs = new ArrayList<String>();
@@ -103,7 +103,7 @@ public abstract class ConsoleUtils {
     }
 
     /**
-     * Prints a message box with a string inside
+     * Prints a peopleOnline box with a string inside
      *
      * @param flatString the flat string to be printed
      * @param width      the width of the box
@@ -116,7 +116,7 @@ public abstract class ConsoleUtils {
     }
 
     /**
-     * Prints a message box of fixed width specified by DEFAULT_BOX_SIZE
+     * Prints a peopleOnline box of fixed width specified by DEFAULT_BOX_SIZE
      *
      * @param flatString the flat string to be printed
      * @return the string representation of the box
@@ -139,7 +139,7 @@ public abstract class ConsoleUtils {
      * Prints out an array of strings in a box with custom width
      *
      * @param messages list of lines to be printed
-     * @param width    the width of the message box
+     * @param width    the width of the peopleOnline box
      * @return the string representation of the box
      */
     public static String printMessageBox(List<String> messages, int width){
@@ -159,7 +159,7 @@ public abstract class ConsoleUtils {
     }
 
     /**
-     * Fills a line with a set amount of characters, used for building the top and bottom bars of message bars
+     * Fills a line with a set amount of characters, used for building the top and bottom bars of peopleOnline bars
      *
      * @param amount the character width of the line
      * @param filler Default fill character

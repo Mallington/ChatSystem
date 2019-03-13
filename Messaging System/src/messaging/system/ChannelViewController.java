@@ -1,8 +1,13 @@
 package messaging.system;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ReadOnlyProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +37,7 @@ public class ChannelViewController implements Initializable {
     private CustomListCellController<MessageComponent> messageController;
 
     /**
-     * Contains a backup of all of the message components added to the messageController
+     * Contains a backup of all of the peopleOnline components added to the messageController
      */
     private List<MessageComponent> messageBoxes = new ArrayList<MessageComponent>();
 
@@ -54,16 +59,38 @@ public class ChannelViewController implements Initializable {
     }
 
     /**
-     * Initialises the message list controller
+     * Initialises the peopleOnline list controller
      */
     private void init(){
         messageController = new CustomListCellController<MessageComponent>(messageList);
     }
 
     /**
+     * This binds the size of the messageList to the size of the containing size
+     * @param pane the pane to be bound to
+     */
+    public void bindPane(AnchorPane pane){
+        messageList.setPrefWidth(pane.getWidth()-5);
+        messageList.setPrefHeight(pane.getHeight()-5);
+        pane.widthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                messageList.setPrefWidth(((newValue.doubleValue()-messageList.getWidth())>2  && (newValue.doubleValue()-messageList.getWidth())<20)? newValue.doubleValue()-5 :0);
+            }
+        });
+
+        pane.heightProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                messageList.setPrefHeight(((newValue.doubleValue()-messageList.getHeight())>2 && (newValue.doubleValue()-messageList.getHeight())<20)? newValue.doubleValue()-5 :0);
+            }
+        });
+    }
+
+    /**
      * @param message Message to be checked against list
      *
-     * If a message already exists, the the associated component with its controller is returned
+     * If a peopleOnline already exists, the the associated component with its controller is returned
      * @return Message
      */
     private MessageComponent getComponent(Message message){
@@ -72,7 +99,7 @@ public class ChannelViewController implements Initializable {
     }
 
     /**
-     * Either adds or updates an existing message according to the contents if message.
+     * Either adds or updates an existing peopleOnline according to the contents if peopleOnline.
      *
      * @param message to be added or updated
      */
@@ -92,7 +119,7 @@ public class ChannelViewController implements Initializable {
             }
 
             } catch (IOException e) {
-                    System.out.println("Failed to obtain message controller");
+                    System.out.println("Failed to obtain peopleOnline controller");
             }
 
     }

@@ -28,11 +28,11 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
     }
 
     /**
-     * Displays a message box containing the contents of a message.
+     * Displays a peopleOnline box containing the contents of a peopleOnline.
      *
-     * @param message the message object
-     * @param width   the width of the message box
-     * @return the string form of the message box ready to be printed
+     * @param message the peopleOnline object
+     * @param width   the width of the peopleOnline box
+     * @return the string form of the peopleOnline box ready to be printed
      */
     private String displayMessage(Message message, int width) {
         List<String> components = new ArrayList<String>();
@@ -50,6 +50,8 @@ public abstract class ClientConsole extends ConsoleUtils implements ClientUserIn
 
         return printMessageBox(components, width);
     }
+    @Override
+    public void setNetwork(ClientNetwork client){}
 
     /**
      * See interface class for documentation

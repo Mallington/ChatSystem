@@ -25,7 +25,7 @@ public class MessageComponent extends Resource<MessageComponentController> {
             super.getController().setBody(messageText);
         }
         catch(Exception e){
-            System.out.println("Failed to load message controller");
+            System.out.println("Failed to load peopleOnline controller");
         }
     }
 

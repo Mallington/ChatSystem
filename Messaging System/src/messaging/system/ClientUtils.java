@@ -62,6 +62,7 @@ public class ClientUtils {
     public static void initInterface(ClientUserInterface clientInterface, ClientNetwork client){
         Data db = new Data();
         clientInterface.setDataBase(db);
+        clientInterface.setNetwork(client);
         db.addListener(clientInterface);
 
         client.setUserInterface(clientInterface);

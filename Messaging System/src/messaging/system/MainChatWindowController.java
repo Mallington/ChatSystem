@@ -2,16 +2,18 @@ package messaging.system;
 
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,39 +21,128 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * This is the main operations centre for the GUI, it is responsible for updating the main channel view, the list of
+ * channels in the left sidebar, the console and taking in input from the user
+ */
 public class MainChatWindowController implements ClientUserInterface, Initializable {
+    /**
+     * The text flow responsible for outputting console messages
+     */
     @FXML
-    TextFlow consoleOutput = new TextFlow();
+    private TextFlow consoleOutput = new TextFlow();
 
+    /**
+     * This is where the Channel View Components are displayed
+     */
     @FXML
-    AnchorPane channelViewPane = new AnchorPane();
+    private AnchorPane channelViewPane = new AnchorPane();
 
-    public CustomListCellController<MessageComponent> channelListController = null;
+    /**
+     * The Channel name.
+     */
     @FXML
-    ListView<MessageComponent> channelList;
+    private Text channelName = new Text();
 
+    /**
+     * Text field responsible for inputting user text
+     */
     @FXML
-    Text channelName = new Text();
+    private TextField messageInput = new TextField();
+    /**
+     * Pointer to the data base
+     */
+    private Data dataBase =null;
 
-    Data dataBase =null;
-
+    /**
+     * Contains all of the active channel components that are responsible for displaying a channel's messages
+     */
     private List<ChannelViewComponent> channelViewComponents = new ArrayList<ChannelViewComponent>();
 
+    /**
+     * Current channel to be displayed
+     */
     private String currentViewID =null;
 
+    /**
+     * Network instance to be used to send messages
+     */
+    private ClientNetwork network = null;
+
+    /**
+     * List of components displaying the statuses of each channel in the left sidebar
+     */
+    @FXML
+    private ListView<GroupComponent> channelList;
+    /**
+     * List of components displaying the statuses of each channel in the left sidebar
+     */
+    private List<GroupComponent> groupListViewComponents = new ArrayList<>();
+    /**
+     * Controls the list view containing the statuses of each channel
+     */
+    private CustomListCellController<GroupComponent> channelListController = null;
+
+    /**
+     * Initialises the controller
+     * @param location Not used
+     * @param resources Not used
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        channelListController = new CustomListCellController<GroupComponent>(channelList);
+    }
 
-        channelListController = new CustomListCellController<MessageComponent>(channelList);
-        for(int i =0; i< 10; i++){
-            channelListController.add(new MessageComponent("Mathew Allington"+i,"Hello","My Name is mathew",(Math.random()>0.5)));
+    /**
+     * Sets channel name.
+     *
+     * @param channelName the channel name
+     */
+    public void setChannelName(String channelName) {
+        this.channelName.setText(channelName);
+    }
+
+    /**
+     * Sets network
+     * @param network
+     */
+    public void setNetwork(ClientNetwork network) {
+        this.network = network;
+    }
+
+    /**
+     * Method is triggered every time a key is pressed.
+     * When the enter key is pressed, a message will be sent depending on whether or not the network is currently
+     * connected
+     *
+     * @param event the key pressed
+     */
+    public void sendMessageTrigger(KeyEvent event){
+        if(event.getCode().equals(KeyCode.ENTER)){
+            if(network !=null){
+                if(messageInput.getText().equalsIgnoreCase("EXIT")){
+                    System.exit(0);
+                }
+                else if(!messageInput.equals("") && messageInput!=null && !network.isConnectionLost() &&!network.isNetworkClosed()){
+                    Message m = new Message();
+                    m.setBody(messageInput.getText());
+                    m.setRoomID(currentViewID);
+                    m.setSenderID(Constants.getUserId());
+                    network.sendMessage(m);
+                    messageInput.setText(null);
+                }
+                else{
+                    printConsole("Message not sent:");
+                    printConsole("Please wait for connection");
+                }
+
+            }
         }
-
 
     }
 
-    public void sendMessageTrigger(){
-
+    public void setOnClose(EventHandler handler){
+        messageInput.getScene().getWindow().setOnCloseRequest(handler);
     }
 
     public void addChannel(){
@@ -77,7 +168,32 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
                 }
                 channelViewComponents.add(channelViewComponent);
                 currentViewID = channelViewComponent.getChannelID();
+
+                GroupComponent channelView = new GroupComponent(channelViewComponent.getChatRoom().getName(), channelViewComponent.getChatRoom().getUserIDS().size());
+                channelView.setChannelID(channelViewComponent.getChannelID());
+                channelListController.add(channelView);
+                groupListViewComponents.add(channelView);
             }
+
+
+        //Updates the channel view sidebar
+        try {
+            if (null != groupListViewComponents) {
+                for (GroupComponent sideView : groupListViewComponents) {
+                    if (sideView != null && chatRoom != null && sideView.getChannelID().equals(chatRoom.getRoomID())) {
+                        try {
+                            sideView.getController().setGroupName(chatRoom.getName());
+                            sideView.getController().setNumberOfPeople(chatRoom.getUserIDS().size());
+                        } catch (IOException e) {
+                            System.out.println("Error, could not set group component");
+                        }
+
+                    }
+                }
+            }
+        } catch(Exception e){
+
+        }
     }
 
     private ChannelViewComponent getChannelViewByID(String ID){
@@ -90,6 +206,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         return null;
     }
 
+
     private void updateView(){
         Platform.runLater(()->{
         ChannelViewComponent comp;
@@ -100,8 +217,9 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
             ObservableList<Node> nodeList = channelViewPane.getChildren();
             nodeList.remove(0, nodeList.size());
             try {
-                comp.getNode().setLayoutX(channelViewPane.getParent().getLayoutX());
-                comp.getNode().setLayoutY(channelViewPane.getParent().getLayoutY());
+
+                comp.getController().bindPane(channelViewPane);
+
                 nodeList.add(comp.getNode());
             } catch (IOException e) {
                 displayError("Node Update Failed", "ChannelID: "+currentViewID);
@@ -150,13 +268,18 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
 
     @Override
     public void printConsole(String consoleMessage) {
-        Platform.runLater(() ->consoleOutput.getChildren().addAll(new Text(consoleMessage)));
+        if(!consoleMessage.contains("\n")) consoleMessage += '\n';
+        Text t = new Text(consoleMessage);
+        t.setFill(Paint.valueOf("white"));
+        Platform.runLater(() ->consoleOutput.getChildren().addAll(t));
     }
 
     @Override
     public void displayError(String title, String body) {
+        Text t = new Text("\nOOPs:["+title+"]\n"+body+"\n");
+        t.setFill(Paint.valueOf("white"));
         Platform.runLater( ()->{
-            consoleOutput.getChildren().addAll(new Text("\nOOPs:["+title+"]\n"+body));
+            consoleOutput.getChildren().addAll(t);
         });
     }
 

@@ -31,6 +31,8 @@ public abstract class NetworkUtils {
     private boolean listen = false;
     private boolean networkClosed = false;
 
+    private Thread serverThread = null;
+
     public NetworkUtils(int port){
         this.port = port;
     }
@@ -61,14 +63,14 @@ public abstract class NetworkUtils {
     public void startListening(){
         if(!listen) {
             listen = true;
-            while(!initSocket()){
+            while(!initSocket()&&!serverThread.isInterrupted()){
                 try {
                     if(masterOutput!=null) masterOutput.printConsole("Retrying in "+(retryPeriod/1000.0)+" seconds ...");
                     Thread.sleep(retryPeriod);
                 } catch (InterruptedException e) {}
             }
             if(masterOutput!=null) masterOutput.printConsole("Server is open for business.");
-            new Thread(serverThread).start();
+            (serverThread = new Thread(serverRunnable)).start();
         }
         else{
             if(masterOutput!=null) masterOutput.printConsole("Network listener already running.");
@@ -85,7 +87,7 @@ public abstract class NetworkUtils {
         listen = false;
     }
 
-    private Runnable serverThread = ()->{
+    private Runnable serverRunnable = ()->{
         while(listen) {
             try {
                 Socket sock = server.accept();

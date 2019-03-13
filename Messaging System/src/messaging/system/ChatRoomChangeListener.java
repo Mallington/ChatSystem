@@ -7,8 +7,8 @@ public interface ChatRoomChangeListener {
      /**
       * Updates the changes to the messages
       *
-      * @param oldMessage the old message
-      * @param newMessage the new message
+      * @param oldMessage the old peopleOnline
+      * @param newMessage the new peopleOnline
       */
      public void update(Message oldMessage, Message newMessage);
 

@@ -28,7 +28,7 @@
          <children>
             <VBox prefWidth="300.0" styleClass="chat-room-list">
                <children>
-                  <HBox alignment="CENTER_RIGHT" minWidth="50.0" prefHeight="50.0" styleClass="title-box">
+                  <HBox alignment="CENTER_RIGHT" styleClass="title-box">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-box" text="Channels">
                            <font>
@@ -63,20 +63,20 @@
                         </Text>
                      </children>
                   </HBox>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-hbar-policy: never; -fx-vbar-policy: never;">
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-hbar-policy: never; -fx-vbar-policy: never; -fx-border-color: transparent;">
                      <content>
-                        <TextFlow fx:id="consoleOutput" maxWidth="300.0" prefHeight="200.0" prefWidth="300.0" style="-fx-padding: 0;" styleClass="root" />
+                        <TextFlow fx:id="consoleOutput" prefHeight="200.0" prefWidth="358.0" style="-fx-border-color: black;" styleClass="root" />
                      </content>
                   </ScrollPane>
                </children>
             </VBox>
-            <AnchorPane fx:id="channelViewPane" prefWidth="538.0" style="-fx-background-color: red;" HBox.hgrow="ALWAYS">
+            <AnchorPane fx:id="channelViewPane" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets top="52.0" />
                </HBox.margin></AnchorPane>
-            <VBox prefWidth="250.0" styleClass="chat-room-list">
+            <VBox styleClass="chat-room-list">
                <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="50.0" styleClass="title-box">
+                  <HBox alignment="CENTER_RIGHT" styleClass="title-box">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-box" text="Members">
                            <font>
@@ -103,9 +103,9 @@
                <children>
                   <HBox alignment="BOTTOM_CENTER" prefWidth="1052.0" VBox.vgrow="NEVER">
                      <children>
-                        <TextField opacity="0.89" prefHeight="40.0" prefWidth="500.0" promptText="Message: &quot;Channel Name&quot;" styleClass="text-box" HBox.hgrow="ALWAYS">
+                        <TextField fx:id="messageInput" onKeyReleased="#sendMessageTrigger" opacity="0.89" prefHeight="40.0" prefWidth="500.0" promptText="Message: &quot;Channel Name&quot;" styleClass="text-box" HBox.hgrow="ALWAYS">
                            <HBox.margin>
-                              <Insets left="350.0" right="400.0" />
+                              <Insets left="400.0" right="400.0" />
                            </HBox.margin>
                         </TextField>
                      </children>

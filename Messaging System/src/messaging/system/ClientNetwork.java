@@ -176,10 +176,10 @@ public class ClientNetwork extends NetworkUtils{
     }
 
     /**
-     * Sends a message request to the server
+     * Sends a peopleOnline request to the server
      *
-     * @param message the message to be sent
-     * @return whether the message request was successful
+     * @param message the peopleOnline to be sent
+     * @return whether the peopleOnline request was successful
      */
     public boolean sendMessage(Message message){
         Packet response = (createResource(message, Constants.Header.SEND_MESSAGE));

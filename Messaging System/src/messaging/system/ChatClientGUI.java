@@ -1,5 +1,8 @@
 package messaging.system;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
+
 /**
  * Main entry point for running the GUI
  */
@@ -18,10 +21,11 @@ public class ChatClientGUI {
         ClientNetwork client = ClientUtils.initNetwork();
         Data db = new Data();
         ClientGUI GUI = new ClientGUI();
-        ClientUserInterface clientInterface = GUI.open(args);
-
+        MainChatWindowController clientInterface = GUI.open(args);
+        clientInterface.setOnClose(event -> {
+            client.setNetworkClosed(true);
+        });
         ClientUtils.initInterface(clientInterface, client);
-
 
     }
 }

@@ -10,8 +10,6 @@ import java.util.ResourceBundle;
 
 public class MessageComponentController  implements Initializable {
 
-    private boolean userSentMessage = false;
-
     @FXML
     Text sender = new Text();
 
@@ -28,19 +26,5 @@ public class MessageComponentController  implements Initializable {
 
     public void setBody(String text){
         message.setText(text);
-    }
-
-    public void setUserSentMessage(boolean userSentMessage){
-        this.userSentMessage = userSentMessage;
-    }
-
-    public boolean isUserSentMessage() {
-        return userSentMessage;
-    }
-
-    private void setPanePosition(){
-        if(userSentMessage){
-
-        }
     }
 }

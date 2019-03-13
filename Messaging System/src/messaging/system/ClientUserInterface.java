@@ -16,6 +16,11 @@ import java.util.List;
  */
 public interface ClientUserInterface  extends MasterUserInterface,  ChatRoomChangeListener{
     /**
+     * Sets network instance
+     * @param client
+     */
+    public void setNetwork(ClientNetwork client);
+    /**
      * Updates the list of chat rooms that the user is in.
      *
      * @param roomList the room list
