@@ -61,6 +61,10 @@ public class Resource<ControllerType> {
         return (controller ==null) ? (controller = LOADER.getController()) : controller;
     }
 
+    /**
+     * Sets the root component of the loaded FXMl document
+     * @param root to be set
+     */
     public void setRoot(Object root){
         LOADER.setRoot(root);
     }

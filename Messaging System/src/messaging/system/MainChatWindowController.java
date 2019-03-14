@@ -141,19 +141,34 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
 
     }
 
+    /**
+     * Sets the event handler which needs to be actioned upon the window exiting
+     * @param handler the handler
+     */
     public void setOnClose(EventHandler handler){
         messageInput.getScene().getWindow().setOnCloseRequest(handler);
     }
 
+    /**
+     * Triggered by the add channel button
+     */
     public void addChannel(){
 
     }
 
+    /**
+     * Triggered by the add user button
+     */
     public void addMember(){
 
     }
 
+    /**
+     * Either adds a chat room and adds the corresponding components or updates existing ones
+     * @param chatRoom
+     */
     private void updateChannel(ChatRoom chatRoom){
+        //Updates the channel view component
             ChannelViewComponent channelComp;
             if((channelComp = getChannelViewByID(chatRoom.getRoomID())) !=null) {
                 channelComp.setChatRoom(chatRoom);
@@ -206,7 +221,9 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         return null;
     }
 
-
+    /**
+     * Sets the channel name text, the main view and the sidebars
+     */
     private void updateView(){
         Platform.runLater(()->{
         ChannelViewComponent comp;
@@ -228,6 +245,10 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         });
     }
 
+    /**
+     * Updates each channel and there associated component
+     * @param roomList the room list
+     */
     @Override
     public void updateChatRoomList(List<ChatRoom> roomList) {
         for(ChatRoom room : roomList){
@@ -237,11 +258,20 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         updateView();
     }
 
+    /**
+     * Gets database instance
+     * @return database
+     */
     @Override
     public Data getDataBase() {
         return dataBase;
     }
 
+    /**
+     * Adds the new and updates the old messages
+     * @param oldMessage
+     * @param newMessage
+     */
     @Override
     public void update(Message oldMessage, Message newMessage) {
         Platform.runLater(()->{
@@ -260,7 +290,11 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
 
         });
     }
-
+    /**
+     * Adds the new and updates the old user
+     * @param oldUser
+     * @param newUser
+     */
     @Override
     public void update(User oldUser, User newUser) {
 
@@ -283,6 +317,10 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         });
     }
 
+    /**
+     * Sets database instanse
+     * @param dataBase the data base
+     */
     public void setDataBase(Data dataBase) {
         this.dataBase = dataBase;
     }

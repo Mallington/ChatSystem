@@ -8,22 +8,38 @@ import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MessageComponentController  implements Initializable {
+/**
+ * Main controller for the MessageComponent.fxml
+ * Main use is to control each message box
+ */
+public class MessageComponentController{
 
+    /**
+     * Denotes display name of the sender
+     */
     @FXML
-    Text sender = new Text();
-
+    private Text sender = new Text();
+    /**
+     * Text of the message
+     */
     @FXML
-    Text message = new Text();
+    private Text message = new Text();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-    }
+    /**
+     * Set the sender.
+     *
+     * @param displayName the display name of the sender
+     */
     public void setSender(String displayName){
         sender.setText(displayName);
     }
 
+    /**
+     * Set the body of the message.
+     *
+     * @param text the message body
+     */
     public void setBody(String text){
         message.setText(text);
     }

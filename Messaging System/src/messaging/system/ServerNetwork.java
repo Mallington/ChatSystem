@@ -3,17 +3,37 @@ package messaging.system;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * The main 'command center' for handling and routing requests
+ * This class handles the main logic for all incoming traffic
+ */
 public class ServerNetwork extends NetworkUtils {
-
+    /**
+     * Used for displaying server related changes
+     */
     private ServerUserInterface serverUserInterface = null;
+    /**
+     * Data Base pointer
+     */
     private Data dataBase;
 
+    /**
+     * Instantiates a new Server network.
+     *
+     * @param port     the port number
+     * @param dataBase the data base pointer
+     */
     public ServerNetwork(int port, Data dataBase) {
         super(port);
         this.dataBase = dataBase;
     }
 
+    /**
+     * This particular implementation handles a variety of different requests
+     * Each one depending on the type of header in the packet
+     * @param request to be dealt with
+     * @return the returned packet
+     */
     @Override
     Packet requestRecieved(Packet request) {
         try {
@@ -44,6 +64,11 @@ public class ServerNetwork extends NetworkUtils {
 
     }
 
+    /**
+     * Either adds or creates a new user
+     * @param request to be handled
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
     private Packet handleUserUpdate(Packet request) {
         if (request != null && request.getPayload() != null) {
             try {
@@ -62,6 +87,11 @@ public class ServerNetwork extends NetworkUtils {
         }
     }
 
+    /**
+     * Either adds or creates a message
+     * @param request to be handled
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
     private Packet handleMessageUpdate(Packet request) {
         if (request != null && request.getPayload() != null) {
             try {
@@ -79,12 +109,16 @@ public class ServerNetwork extends NetworkUtils {
             return new Packet(Constants.Header.FAIL);
         }
     }
-
-    private Packet handleUpdateRequest(Packet pack) {
+    /**
+     * Sends back an update for a specific ChatRoom
+     * @param request to be handled
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
+    private Packet handleUpdateRequest(Packet request) {
 
         try {
             Packet response = new Packet(Constants.Header.SUCCESS);
-            String roomID = (String) pack.getPayload();
+            String roomID = (String) request.getPayload();
             response.setPayload(dataBase.getChatRoomByID(roomID));
             return response;
         } catch (Exception e) {
@@ -92,20 +126,24 @@ public class ServerNetwork extends NetworkUtils {
         }
 
     }
-
-    private Packet handleUpdateDBRequest(Packet pack) {
+    /**
+     * Sends back updates for messages and users
+     * @param request to be handled
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
+    private Packet handleUpdateDBRequest(Packet request) {
 
         try {
-            UpdateRequestContainer cont = (UpdateRequestContainer) pack.getPayload();
+            UpdateRequestContainer cont = (UpdateRequestContainer) request.getPayload();
 
             List<Message> messages = new ArrayList<Message>();
             List<User> users = new ArrayList<User>();
 
-            for (String id : cont.messagesToFetch) {
+            for (String id : cont.getMessagesToFetch()) {
                 for (Message m : dataBase.getMessages()) if (m.getMessageID().equals(id)) messages.add(m);
             }
 
-            for (String id : cont.usersToFetch) {
+            for (String id : cont.getUsersToFetch()) {
                 for (User u : dataBase.getUsers()) if (u.getUserID().equals(id)) users.add(u);
             }
 
@@ -119,6 +157,12 @@ public class ServerNetwork extends NetworkUtils {
 
     }
 
+    /**
+     * Handle user login request
+     *
+     * @param request the request
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
     public Packet handleUserLoginRequest(Packet request) {
         Packet response = new Packet(Constants.Header.FAIL);
         try {
@@ -133,6 +177,11 @@ public class ServerNetwork extends NetworkUtils {
         }
 
 
+    /**
+     * Sets server user interface.
+     *
+     * @param serverUserInterface the server user interface
+     */
     public void setServerUserInterface(ServerUserInterface serverUserInterface) {
         this.serverUserInterface = serverUserInterface;
         super.setMasterOutput(serverUserInterface);
