@@ -15,4 +15,10 @@ public interface ServerUserInterface extends MasterUserInterface{
      * @param port number to be displayed
      */
     public void displayPort(int port);
+
+    /**
+     * Displays the amount of users currently registered on the server
+     * @param population amount of users on the server
+     */
+    public void displaysUserPopulation(int population);
 }

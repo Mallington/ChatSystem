@@ -22,12 +22,7 @@ public class ChatClient {
     public static void main(String[] args) throws InterruptedException {
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
 
-        boolean runUI;
-        if(Constants.getRunGui() ==null) runUI = ConsoleUtils.getYesNoChoice("Would you like to run the GUI?");
-        else runUI = Constants.getRunGui();
-
-
-        if (runUI) {
+        if (GeneralUtils.resolveRunGUIParam()) {
             ChatClientGUI.main(args);
         }
         else {

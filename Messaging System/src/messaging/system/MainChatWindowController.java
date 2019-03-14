@@ -124,10 +124,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
     public void sendMessageTrigger(KeyEvent event){
         if(event.getCode().equals(KeyCode.ENTER)){
             if(network !=null){
-                if(messageInput.getText().equalsIgnoreCase("EXIT")){
-                    System.exit(0);
-                }
-                else if(!messageInput.equals("") && messageInput!=null && !network.isConnectionLost() &&!network.isNetworkClosed()){
+               if(!messageInput.equals("") && messageInput!=null && !network.isConnectionLost() &&!network.isNetworkClosed()){
                     Message m = new Message();
                     m.setBody(messageInput.getText());
                     m.setRoomID(currentViewID);

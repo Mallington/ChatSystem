@@ -99,7 +99,7 @@ public class StageLoader<Controller> extends Application{
 
         //Starts the GUI on a separate thread
 
-        //new Thread(()->launch(args)).start();
+
         if(instanceHasStarted) {
             Platform.runLater(() -> {
                 cGUI.start(new Stage());

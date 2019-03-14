@@ -94,11 +94,19 @@ public class Constants {
             //Updates the server parameters
             case ChatServer:
                 //Server port
-                parser.add(new Parameter("csp", false));
+                parser.add(new Parameter("csp", false))
+                        .add(new Parameter("GUI", false));
                 Integer cspArg = null;
+                String csArg;
 
                 if (parser.parseParameters(args) && (cspArg = parser.getID("csp").parseInteger()) != null) {
                     PORT = cspArg;
+                }
+                if ((csArg = parser.getID("GUI").getValue()) != null) {
+                    try{
+                        RUN_GUI = Boolean.parseBoolean(csArg);
+                    }
+                    catch(Exception e){}
                 }
 
                 break;

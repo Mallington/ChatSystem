@@ -1,5 +1,9 @@
 package messaging.system;
 
+import javafx.event.EventHandler;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +23,8 @@ public class ClientUtils {
             @Override
             public void userInputted(String userInput, ConsoleUtils console) {
                 console.printConsole("Inputted: "+userInput);
-                switch (userInput.toLowerCase().trim()) {
-                    case "exit":
+                switch (userInput.trim()) {
+                    case "EXIT":
                         console.printConsole("Exiting...");
                         client.stopUpdaterTask();
                         client.setNetworkClosed(true);
@@ -82,6 +86,35 @@ public class ClientUtils {
         }
 
         client.startUpdaterTask(db);
+    }
+
+    /**
+     * Setups up and loads the GUI window
+     *
+     * @param args the commandline arguments
+     * @return the main chat window controller
+     */
+    public static MainChatWindowController setupClientGUI(String args[]){
+        StageLoader<MainChatWindowController> GUI = new StageLoader();
+
+        StageRunnable<MainChatWindowController> setup = new StageRunnable<MainChatWindowController>() {
+            @Override
+            Resource setupStage(Stage primaryStage) {
+                Resource<MainChatWindowController> r = new Resource<MainChatWindowController>("MainChatWindow.fxml");
+                primaryStage.setMinWidth(900);
+                primaryStage.setMinHeight(400);
+                primaryStage.setTitle("Chat Client");
+                primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        System.exit(0);
+                    }
+                });
+                return r;
+            }
+        };
+
+       return GUI.open(args, setup);
     }
 
 }

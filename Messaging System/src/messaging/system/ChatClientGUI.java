@@ -23,26 +23,8 @@ public class ChatClientGUI {
 
         ClientNetwork client = ClientUtils.initNetwork();
         Data db = new Data();
-        StageLoader<MainChatWindowController> GUI = new StageLoader();
 
-        StageRunnable<MainChatWindowController> setup = new StageRunnable<MainChatWindowController>() {
-            @Override
-            Resource setupStage(Stage primaryStage) {
-                Resource<MainChatWindowController> r = new Resource<MainChatWindowController>("MainChatWindow.fxml");
-                primaryStage.setMinWidth(900);
-                primaryStage.setMinHeight(400);
-                primaryStage.setTitle("Chat Client");
-                primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                    @Override
-                    public void handle(WindowEvent event) {
-                        System.exit(0);
-                    }
-                });
-                return r;
-            }
-        };
-
-        MainChatWindowController clientInterface = GUI.open(args, setup);
+        MainChatWindowController clientInterface = ClientUtils.setupClientGUI(args);
         clientInterface.setOnClose(event -> {
             client.setNetworkClosed(true);
         });

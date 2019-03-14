@@ -318,5 +318,18 @@ public class Data implements Serializable {
         getChatRoomByID(Constants.DEFAULT_CHAT_ROOM_ID).getUserIDS().add(user.getUserID());
     }
 
+    public boolean removeUser(String UID){
+        if(containsUser(UID)){
+            getUsers().remove(getUserByID(UID));
+
+            for(ChatRoom room : getChatRooms()){
+                room.getUserIDS().remove(UID);
+            }
+            return true;
+        }
+
+        return false;
+    }
+
     
 }

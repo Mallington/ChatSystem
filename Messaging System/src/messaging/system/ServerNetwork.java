@@ -78,6 +78,9 @@ public class ServerNetwork extends NetworkUtils {
                 String UID = dataBase.updateUser(user);
                 response.setPayload(UID);
 
+                //Updates amount of users
+                serverUserInterface.displaysUserPopulation(dataBase.getUsers().size());
+
                 return response;
             } catch (Exception e) {
                 return new Packet(Constants.Header.FAIL);
@@ -176,6 +179,27 @@ public class ServerNetwork extends NetworkUtils {
             return response;
         }
 
+    /**
+     * Handle logoff request
+     *
+     * @param request the request
+     * @return Either SUCCESS or FAIL packet is sent back
+     */
+    public Packet handleUserLogoffRequest(Packet request) {
+        Packet response = new Packet(Constants.Header.FAIL);
+        try {
+            String UID = request.toString();
+
+            if (dataBase.removeUser(UID)) {
+
+                response = new Packet(Constants.Header.SUCCESS);
+            }
+        }
+        catch(Exception e){
+            System.out.println("User Logoff Failed");
+        }
+        return response;
+    }
 
     /**
      * Sets server user interface.

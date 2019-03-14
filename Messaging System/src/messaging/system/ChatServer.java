@@ -17,34 +17,20 @@ public class ChatServer {
      *
      * @param args the command line arguments
      */
-   static Data db;
     public static void main(String[] args) {
         Constants.updateConstants(args, Constants.NodeType.ChatServer);
 
-        db= new Data();
+        if(GeneralUtils.resolveRunGUIParam()) {
+            ChatServerGUI.main(args);
+        }
+        else{
+            Data db = new Data();
 
-        ServerNetwork server = new ServerNetwork(Constants.getPort(), db);
+            ServerNetwork server = new ServerNetwork(Constants.getPort(), db);
 
-        ServerConsole serverConsole = new ServerConsole() {
-            @Override
-            public void userInputted(String userInput, ConsoleUtils console) {
-                switch(userInput){
-                    case "EXIT":
-                        server.stopListening();
-                        console.stopConsoleListener();
-                        break;
-                    default:
-                        console.printConsole("Command "+userInput+" not recognised.");
-                }
-            }
-        };
+            ServerConsole userInterface = ServerUtils.setupConsole(server);
 
-        serverConsole.printConsole(Constants.SERVER_ASCII);
-        serverConsole.startConsoleListener();
-
-        server.setServerUserInterface(serverConsole);
-
-        serverConsole.displayPort(Constants.getPort());
-        server.startListening();
+            ServerUtils.setupNetwork(server, userInterface);
+        }
     }
 }

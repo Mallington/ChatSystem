@@ -25,4 +25,11 @@ public class GeneralUtils {
         }
         Constants.updateConstants(tempArgs, node);
     }
+
+    public static boolean resolveRunGUIParam(){
+        boolean runUI;
+        if(Constants.getRunGui() ==null) runUI = ConsoleUtils.getYesNoChoice("Would you like to run the GUI?");
+        else runUI = Constants.getRunGui();
+        return runUI;
+    }
 }

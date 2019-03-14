@@ -4,21 +4,54 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
+/**
+ * The purpose of this interface is to provide a graphical interface in which the user is able to
+ * modify parameters before the main application is launched
+ */
 public class ParameterWindow extends  StageRunnable<ParameterWindowController>{
+    /**
+     * Main text that appears inside the window
+     */
     private String title =null;
+
+    /**
+     * Main commandline arguments when instantiating JavaFX instance
+     */
     private String[] cmdArgs =null;
 
+    /**
+     * Where the controller for the ParameterWindow.fxml document is stored
+     */
     private ParameterWindowController controller =null;
 
+
+    /**
+     * Instantiates a new Parameter window.
+     *
+     * @param title the main text for the window
+     * @param args  the commandline arguments
+     */
     public ParameterWindow(String title, String[] args) {
         this.title = title;
         this.cmdArgs = args;
     }
+
+    /**
+     * Loads the FXML, instantiates a new stage and shows the main window
+     * @param args
+     */
     private void showWindow(String args[]){
         StageLoader<ParameterWindowController> st = new StageLoader();
         controller = st.open(args, this);
     }
 
+    /**
+     * Launches a window listing all the pos
+     *
+     * @param defaultString
+     * @param params
+     * @return
+     */
     public List<Parameter> getUserParameters(String defaultString, String... params){
         showWindow(cmdArgs);
 
