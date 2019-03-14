@@ -90,7 +90,11 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        channelListController = new CustomListCellController<GroupComponent>(channelList);
+        try {
+            channelListController = new CustomListCellController<GroupComponent>(channelList);
+        }catch(Exception e){
+            System.out.println("Init in Main Controller failed!");
+        }
     }
 
     /**

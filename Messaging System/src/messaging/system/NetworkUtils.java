@@ -109,6 +109,9 @@ public abstract class NetworkUtils {
         } catch (IOException e) {
             if(masterOutput!=null) masterOutput.displayError("Port already occupied", "Please stop all other instances of the server.");
             return false;
+        } catch(Exception e){
+            if(masterOutput!=null) masterOutput.displayError("Unknown Error", e.getMessage());
+            return false;
         }
     }
 
@@ -118,7 +121,7 @@ public abstract class NetworkUtils {
     public void startListening(){
         if(!listen) {
             listen = true;
-            while(!initSocket()&&!serverThread.isInterrupted()){
+            while(!initSocket()&&  (serverThread==null ||serverThread.isInterrupted())){
                 try {
                     if(masterOutput!=null) masterOutput.printConsole("Retrying in "+(retryPeriod/1000.0)+" seconds ...");
                     Thread.sleep(retryPeriod);

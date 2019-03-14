@@ -54,6 +54,11 @@ public class Constants {
     private static String USER_ID = "GUEST";
 
     /**
+     * Default display name for the user
+     */
+    private static String USER_NAME = null;
+
+    /**
      * Whether or not the GUI should be ran, if null then user will be asked on startup
      */
     private static Boolean RUN_GUI = null;
@@ -107,7 +112,8 @@ public class Constants {
                         //User to login as
                         .add(new Parameter("user", false))
                         //Whether on not the GUI should be run
-                        .add(new Parameter("GUI", false));
+                        .add(new Parameter("GUI", false))
+                        .add(new Parameter("name", false));
                 String ccaArg = null;
                 Integer ccpArg = null;
 
@@ -121,6 +127,9 @@ public class Constants {
                 }
                 if (sucessfulParse && (ccaArg = parser.getID("user").getValue()) != null) {
                     USER_ID = ccaArg;
+                }
+                if (sucessfulParse && (ccaArg = parser.getID("name").getValue()) != null) {
+                    USER_NAME= ccaArg;
                 }
                 if (sucessfulParse && (ccaArg = parser.getID("GUI").getValue()) != null) {
                     try{
@@ -173,5 +182,14 @@ public class Constants {
      */
     public static Boolean getRunGui() {
         return RUN_GUI;
+    }
+
+    /**
+     * Gets users display name
+     *
+     * @return the user name
+     */
+    public static String getUserName() {
+        return USER_NAME;
     }
 }

@@ -1,7 +1,8 @@
 package messaging.system;
 
-import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  * Main entry point for running the GUI
@@ -18,14 +19,34 @@ public class ChatClientGUI {
     public static void main(String[] args) throws InterruptedException {
         Constants.updateConstants(args, Constants.NodeType.ChatClient);
 
+        GeneralUtils.promptUserOptions(args, Constants.NodeType.ChatClient, "-cca", "-ccp", "-user", "-name");
+
         ClientNetwork client = ClientUtils.initNetwork();
         Data db = new Data();
-        ClientGUI GUI = new ClientGUI();
-        MainChatWindowController clientInterface = GUI.open(args);
+        StageLoader<MainChatWindowController> GUI = new StageLoader();
+
+        StageRunnable<MainChatWindowController> setup = new StageRunnable<MainChatWindowController>() {
+            @Override
+            Resource setupStage(Stage primaryStage) {
+                Resource<MainChatWindowController> r = new Resource<MainChatWindowController>("MainChatWindow.fxml");
+                primaryStage.setMinWidth(900);
+                primaryStage.setMinHeight(400);
+                primaryStage.setTitle("Chat Client");
+                primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        System.exit(0);
+                    }
+                });
+                return r;
+            }
+        };
+
+        MainChatWindowController clientInterface = GUI.open(args, setup);
         clientInterface.setOnClose(event -> {
             client.setNetworkClosed(true);
         });
-        ClientUtils.initInterface(clientInterface, client);
+        ClientUtils.initInterface(clientInterface, client, db);
 
     }
 }

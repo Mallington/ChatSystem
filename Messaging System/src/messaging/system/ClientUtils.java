@@ -1,5 +1,8 @@
 package messaging.system;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class contains methods associated with setting up the client
  */
@@ -59,15 +62,19 @@ public class ClientUtils {
      * @param clientInterface the client interface
      * @param client          the client
      */
-    public static void initInterface(ClientUserInterface clientInterface, ClientNetwork client){
-        Data db = new Data();
+    public static void initInterface(ClientUserInterface clientInterface, ClientNetwork client, Data db){
+
         clientInterface.setDataBase(db);
         clientInterface.setNetwork(client);
         db.addListener(clientInterface);
 
         client.setUserInterface(clientInterface);
 
-        User newUser = new User(null, "Mark Allington- " + (int) (Math.random() * 9999));
+        User newUser = new User(null, (Constants.getUserName() ==null)? "Anonymous" : Constants.getUserName());
+
+
+        if(!Constants.getUserId().equals("GUEST")) newUser.setUserID(Constants.getUserId());
+
         if (client.createUser(newUser)) {
             clientInterface.printConsole("User Created.");
         } else {
@@ -76,4 +83,5 @@ public class ClientUtils {
 
         client.startUpdaterTask(db);
     }
+
 }

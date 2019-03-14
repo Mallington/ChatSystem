@@ -40,7 +40,7 @@ public class ChatClient {
 
             if (consoleInst != null) {consoleInst.startConsoleListener();}
 
-            ClientUtils.initInterface(consoleInst, client);
+            ClientUtils.initInterface(consoleInst, client,db);
 
 
         }
