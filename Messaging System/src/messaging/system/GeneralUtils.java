@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GeneralUtils {
-
+    /**
+     * Prompts the user with a series of modifiable parameters that can be edited
+     * When done, the user confirms the changes and the main UI is run
+     * @param args commandline arguments
+     * @param node Client or Network
+     * @param options options
+     */
     public static void promptUserOptions(String[] args, Constants.NodeType node, String... options){
         ParameterWindow pm = new ParameterWindow("Please specify the input values:", args);
 
@@ -26,6 +32,11 @@ public class GeneralUtils {
         Constants.updateConstants(tempArgs, node);
     }
 
+    /**
+     * If the GUI parameter is null, the user is prompted with the question: "Would you like to run the GUI?"
+     *
+     * @return True- Yes, False - No
+     */
     public static boolean resolveRunGUIParam(){
         boolean runUI;
         if(Constants.getRunGui() ==null) runUI = ConsoleUtils.getYesNoChoice("Would you like to run the GUI?");

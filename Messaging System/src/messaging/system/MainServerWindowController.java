@@ -12,15 +12,29 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainServerWindowController implements Initializable, ServerUserInterface {
+    /**
+     * Port Number
+     */
     @FXML
     private Text port;
 
+    /**
+     * Amount of users
+     */
     @FXML
     private Text amountOfUsers;
 
+    /**
+     * Where updates are shown
+     */
     @FXML
     private TextFlow console;
 
+    /**
+     * Initialises controller
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -31,6 +45,10 @@ public class MainServerWindowController implements Initializable, ServerUserInte
         }
     }
 
+    /**
+     * Displays port
+     * @param portNumber
+     */
     @Override
     public void displayPort(int portNumber) {
         Platform.runLater(()->{
@@ -38,6 +56,10 @@ public class MainServerWindowController implements Initializable, ServerUserInte
         });
     }
 
+    /**
+     * Displays users on server
+     * @param population amount of users on the server
+     */
     @Override
     public void displayUserPopulation(int population) {
         Platform.runLater(()->{
@@ -45,6 +67,11 @@ public class MainServerWindowController implements Initializable, ServerUserInte
         });
     }
 
+    /**
+     * Creates text to be added as ndoe
+     * @param message
+     * @return
+     */
     private Node genText(String message){
         Text t = new Text(message);
         t.setFill(Paint.valueOf("white"));

@@ -5,7 +5,7 @@ import javafx.scene.text.Text;
 
 /**
  * Associated controller for "UserComponent.fxml"
- * Used to display the presence of a user in the left sidebar
+ * Used to display the presence of a user in the right sidebar
  */
 public class UserComponentController{
 

@@ -46,11 +46,12 @@ public class ParameterWindow extends  StageRunnable<ParameterWindowController>{
     }
 
     /**
-     * Launches a window listing all the pos
+     * Launches a window listing all the parmaters to be modified, when the user hits submit,
+     * the window closes and the parameters are returned
      *
-     * @param defaultString
-     * @param params
-     * @return
+     * @param defaultString default value
+     * @param params Parameters
+     * @return List of all the parameters and values
      */
     public List<Parameter> getUserParameters(String defaultString, String... params){
         showWindow(cmdArgs);
@@ -81,6 +82,11 @@ public class ParameterWindow extends  StageRunnable<ParameterWindowController>{
         }
     }
 
+    /**
+     * Loads the FXML for the parameter window
+     * @param stage stage to modify
+     * @return Resource file containing controller and node
+     */
     @Override
     Resource<ParameterWindowController> setupStage(Stage stage) {
         Resource<ParameterWindowController> r = new Resource<ParameterWindowController>("ParameterWindow.fxml");

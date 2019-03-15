@@ -21,8 +21,14 @@ public class StageLoader<Controller> extends Application{
      */
     private static boolean  userInterfaceSemaphore = true;
 
+    /**
+     * This specifies whether or not the main JavaFX thread has been initialised already
+     */
     private static boolean instanceHasStarted = false;
 
+    /**
+     * Temporary storage for changes needed to be made to the stage
+     */
     private static StageRunnable temporaryStageRunnable =null;
 
 
@@ -124,6 +130,13 @@ public class StageLoader<Controller> extends Application{
         return clientUI;
     }
 
+    /**
+     * Loads and shows a stage with modifications dictated by the StageRunnable
+     *
+     * @param args     the commandline arguments
+     * @param runnable modifications to be made
+     * @return the controller associated with the stage
+     */
     public Controller open(String[] args, StageRunnable<Controller> runnable){
         Object controller = loadGUI(args, this, runnable);
 

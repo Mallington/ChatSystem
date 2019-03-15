@@ -3,6 +3,8 @@ package messaging.system;
 public class ChatServerGUI {
     public static void main(String args[]){
         Constants.updateConstants(args, Constants.NodeType.ChatServer);
+
+        //Prompts
         GeneralUtils.promptUserOptions(args, Constants.NodeType.ChatServer, "-csp");
 
         Data db = new Data();
