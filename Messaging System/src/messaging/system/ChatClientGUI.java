@@ -26,6 +26,9 @@ public class ChatClientGUI {
 
         MainChatWindowController clientInterface = ClientUtils.setupClientGUI(args);
         clientInterface.setOnClose(event -> {
+            if(!client.isNetworkClosed() && !client.isConnectionLost()) {
+                client.logOff();
+            }
             client.setNetworkClosed(true);
         });
         ClientUtils.initInterface(clientInterface, client, db);

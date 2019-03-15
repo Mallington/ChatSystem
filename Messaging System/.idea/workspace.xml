@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" line="126" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" line="146" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05fc757d-3a6e-4b9a-9b77-64ad7f0d084a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messaging/system/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messaging/system/UserComponent.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messaging/system/UserComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messaging/system/UserComponentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClientGUI$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClientGUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientNetwork.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GeneralUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GeneralUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants$Header.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants$Header.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainChatWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainChatWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainChatWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainChatWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NetworkUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NetworkUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindowController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerConsole.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerConsole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUserInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ClientNetwork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/GeneralUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/GeneralUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainChatWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/MainChatWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ParameterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ParameterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainServerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/MainServerWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ServerConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ServerNetwork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/StageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/StageLoader.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,10 +59,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerNetwork.java">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/UserComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="191" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="138">
+              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3051#3052#0" expanded="true" />
+                <element signature="e#3104#3105#0" expanded="true" />
+                <element signature="e#3215#3216#0" expanded="true" />
+                <element signature="e#3253#3254#0" expanded="true" />
+                <element signature="e#4453#4454#0" expanded="true" />
+                <element signature="e#4531#4532#0" expanded="true" />
+                <element signature="e#10628#10629#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/README.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/ChannelViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1734">
+              <caret line="123" column="79" selection-start-line="123" selection-start-column="79" selection-end-line="123" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1648">
+              <caret line="120" column="49" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,22 +137,29 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/messaging/system/Constants.java">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+            <state relative-caret-position="219">
+              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/messaging/system/Data.java">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="327" column="24" selection-start-line="327" selection-start-column="24" selection-end-line="327" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="142">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/UserComponent.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20">
+              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -99,13 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updatePeriod</find>
-      <find>captureConsoleIn</find>
-      <find>interrupt</find>
-      <find>Stopping Listener</find>
-      <find>updateDB</find>
-      <find>line</find>
-      <find>consoleListenerTh</find>
       <find>setNetworkClosed</find>
       <find>networkClosed</find>
       <find>makeRe</find>
@@ -129,6 +200,13 @@
       <find>start</find>
       <find>stop</find>
       <find>launch</find>
+      <find>create</find>
+      <find>updates amount</find>
+      <find>consoleOutput</find>
+      <find>ano</find>
+      <find>mem</find>
+      <find>DEFAULT</find>
+      <find>DEFAULT_V</find>
     </findStrings>
     <replaceStrings>
       <replace>getChatRooms</replace>
@@ -151,21 +229,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/messaging/system/MessageListCell.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ClientUtility.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ChannelView.fxml" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ChannelViewComponent.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindow.fxml" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatRoomChangeListener.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatRoom.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ClientUserInterface.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ClientConsole.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/GroupComponent.fxml" />
         <option value="$PROJECT_DIR$/src/messaging/system/CustomListCellController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/GroupComponent.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/GroupComponentController.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ClientNetwork.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ConsoleUtils.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/MasterUserInterface.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/MessageComponent.java" />
@@ -186,22 +258,28 @@
         <option value="$PROJECT_DIR$/src/messaging/system/ParameterWindowController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/NetworkUtils.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ParameterWindow.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/StageLoader.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/Constants.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/GeneralUtils.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatServer.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/MainServerWindow.fxml" />
         <option value="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ServerConsole.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/ServerNetwork.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/Constants.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ClientNetwork.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/Data.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ServerNetwork.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/UserComponentController.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/UserComponent.fxml" />
+        <option value="$PROJECT_DIR$/src/messaging/system/UserComponent.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/README.txt" />
+        <option value="$PROJECT_DIR$/src/messaging/system/ChatClient.java" />
       </list>
     </option>
   </component>
@@ -211,11 +289,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3" />
-    <option name="y" value="52" />
-    <option name="width" value="1441" />
-    <option name="height" value="827" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="y" value="33" />
+    <option name="width" value="1440" />
+    <option name="height" value="822" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -261,7 +338,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552601668896" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552623404319" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -290,7 +367,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ChatClient">
+  <component name="RunManager" selected="Application.ChatServer">
     <configuration name="Chat Server (Different port)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="messaging.system.ChatServer" />
       <module name="Messaging System" />
@@ -432,18 +509,18 @@
       <workItem from="1552058992391" duration="7007000" />
       <workItem from="1552311141457" duration="4855000" />
       <workItem from="1552316157305" duration="206000" />
-      <workItem from="1552316465731" duration="90859000" />
+      <workItem from="1552316465731" duration="101285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265550000" />
+    <option name="totallyTimeSpent" value="275976000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="827" extended-state="6" />
+    <frame x="0" y="33" width="1440" height="822" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4241774" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19670959" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -452,7 +529,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32686982" />
-      <window_info anchor="bottom" x="486" y="284" width="637" height="339" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.3510204" />
+      <window_info anchor="bottom" x="486" y="284" width="637" height="339" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.35342467" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3952514" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -513,78 +590,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/SecurityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="755" column="41" lean-forward="true" selection-start-line="755" selection-start-column="41" selection-end-line="755" selection-end-column="41" />
-          <folding>
-            <element signature="e#30871#30872#0" expanded="true" />
-            <element signature="e#30943#30944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="970" column="31" lean-forward="true" selection-start-line="970" selection-start-column="31" selection-end-line="970" selection-end-column="31" />
-          <folding>
-            <element signature="e#40171#40172#0" expanded="true" />
-            <element signature="e#40220#40221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/MessageComponentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/MessageComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1276#1277#0" expanded="true" />
-            <element signature="e#1326#1327#0" expanded="true" />
-            <element signature="e#1368#1369#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/GroupComponent.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="183" selection-start-line="9" selection-start-column="183" selection-end-line="9" selection-end-column="183" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatRoomChangeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -657,30 +662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/GroupComponentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/MasterUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChannelViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
-          <caret line="83" column="76" selection-start-line="83" selection-start-column="76" selection-end-line="83" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -795,16 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ClientNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="75" column="54" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ParameterWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
@@ -850,53 +825,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="148" column="16" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3051#3052#0" expanded="true" />
-            <element signature="e#3104#3105#0" expanded="true" />
-            <element signature="e#3215#3216#0" expanded="true" />
-            <element signature="e#3253#3254#0" expanded="true" />
-            <element signature="e#4453#4454#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="74" lean-forward="true" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ClientUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="96" column="26" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -926,16 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -951,31 +873,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="75">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ClientConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/Data.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="327" column="24" selection-start-line="327" selection-start-column="24" selection-end-line="327" selection-end-column="24" />
+        <state relative-caret-position="127">
+          <caret line="319" lean-forward="true" selection-start-line="319" selection-end-line="319" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ClientNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="179" column="48" lean-forward="true" selection-start-line="179" selection-start-column="48" selection-end-line="179" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -984,8 +916,127 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ServerNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="276">
+          <caret line="86" column="112" selection-start-line="86" selection-start-column="112" selection-end-line="86" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/GroupComponentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="14" column="13" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/GroupComponent.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="10" column="13" lean-forward="true" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/GroupComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/UserComponentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ClientUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="81" column="80" selection-start-line="81" selection-start-column="80" selection-end-line="81" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/UserComponent.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/UserComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="113" column="18" lean-forward="true" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3051#3052#0" expanded="true" />
+            <element signature="e#3104#3105#0" expanded="true" />
+            <element signature="e#3215#3216#0" expanded="true" />
+            <element signature="e#3253#3254#0" expanded="true" />
+            <element signature="e#4453#4454#0" expanded="true" />
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#10628#10629#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/README.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChannelViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="123" column="79" selection-start-line="123" selection-start-column="79" selection-end-line="123" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -994,8 +1045,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
+        <state relative-caret-position="1648">
+          <caret line="120" column="49" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
         </state>
       </provider>
     </entry>

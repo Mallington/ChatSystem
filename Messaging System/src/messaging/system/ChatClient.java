@@ -16,6 +16,8 @@ public class ChatClient {
       * -GUI (Optional): Accepts true or false
       * -cca (Optional): Address in the form of an IP address or another form
       * -ccp (Optional): Port to be connected to
+      * -user (Optional): Specified the uniquely assigned ID for an existing user
+      * -name (Optional): Sets the display name of the user
       *
      * @param args the command line arguments
      */

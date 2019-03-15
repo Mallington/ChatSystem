@@ -16,7 +16,7 @@ public abstract class ServerConsole extends ConsoleUtils implements ServerUserIn
     }
 
     @Override
-    public void displaysUserPopulation(int population){
+    public void displayUserPopulation(int population){
         if(lastServerPopulation!=population){
             lastServerPopulation = population;
             printConsole("Users Online:\n"+population);

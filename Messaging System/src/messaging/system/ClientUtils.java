@@ -26,6 +26,11 @@ public class ClientUtils {
                 switch (userInput.trim()) {
                     case "EXIT":
                         console.printConsole("Exiting...");
+
+                        if(!client.isNetworkClosed() && !client.isConnectionLost()) {
+                            client.logOff();
+                        }
+
                         client.stopUpdaterTask();
                         client.setNetworkClosed(true);
                         console.stopConsoleListener();
@@ -74,7 +79,7 @@ public class ClientUtils {
 
         client.setUserInterface(clientInterface);
 
-        User newUser = new User(null, (Constants.getUserName() ==null)? "Anonymous" : Constants.getUserName());
+        User newUser = new User(null, (Constants.getUserName() ==null)? "Unknown" : Constants.getUserName());
 
 
         if(!Constants.getUserId().equals("GUEST")) newUser.setUserID(Constants.getUserId());

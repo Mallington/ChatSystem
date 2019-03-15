@@ -69,8 +69,10 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     private ClientNetwork network = null;
 
+
+
     /**
-     * List of components displaying the statuses of each channel in the left sidebar
+     * List view of components displaying the statuses of each channel in the left sidebar
      */
     @FXML
     private ListView<GroupComponent> channelList;
@@ -83,6 +85,23 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     private CustomListCellController<GroupComponent> channelListController = null;
 
+
+
+
+    /**
+     * List view of components displaying the statuses of each user on the server
+     */
+    @FXML
+    private ListView<UserComponent> userListView;
+
+    /**
+     * Controls the list view containing the statuses of each user
+     */
+    private CustomListCellController<UserComponent> userListController = null;
+
+
+
+
     /**
      * Initialises the controller
      * @param location Not used
@@ -92,6 +111,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
     public void initialize(URL location, ResourceBundle resources) {
         try {
             channelListController = new CustomListCellController<GroupComponent>(channelList);
+            userListController = new CustomListCellController<UserComponent>(userListView);
         }catch(Exception e){
             System.out.println("Init in Main Controller failed!");
         }
@@ -154,14 +174,14 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      * Triggered by the add channel button
      */
     public void addChannel(){
-
+        //For future development
     }
 
     /**
      * Triggered by the add user button
      */
     public void addMember(){
-
+        //For future development
     }
 
     /**
@@ -298,7 +318,13 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     @Override
     public void update(User oldUser, User newUser) {
+        try {
+            if (newUser != null) {
+                Platform.runLater(()->userListController.add(new UserComponent(newUser.getDisplayName(), newUser.getUserID())));
+            }
+        }catch(Exception e){
 
+        }
     }
 
     @Override

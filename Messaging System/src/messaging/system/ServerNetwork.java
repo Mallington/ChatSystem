@@ -54,9 +54,13 @@ public class ServerNetwork extends NetworkUtils {
                 case LOGIN_USER:
                     return handleUserLoginRequest(request);
 
+                case LOGOFF_USER:
+                    return handleUserLogoffRequest(request);
+
                 default:
                     return new Packet(Constants.Header.INVALID_HEADER);
             }
+
         } catch (Exception e) {
             if(serverUserInterface!=null) serverUserInterface.displayError("Packet Parse Error", e.getLocalizedMessage());
             return new Packet(Constants.Header.FAIL);
@@ -79,7 +83,8 @@ public class ServerNetwork extends NetworkUtils {
                 response.setPayload(UID);
 
                 //Updates amount of users
-                serverUserInterface.displaysUserPopulation(dataBase.getUsers().size());
+                serverUserInterface.displayUserPopulation(dataBase.getUsers().size());
+                serverUserInterface.printConsole("User: \""+user.getDisplayName()+"\" is online.\nUID: "+UID+"\n");
 
                 return response;
             } catch (Exception e) {
@@ -102,7 +107,7 @@ public class ServerNetwork extends NetworkUtils {
 
                 Message message = (Message) request.getPayload();
                 message.setMessageID("TBC");
-                if(serverUserInterface!=null) serverUserInterface.printConsole("Routing Message:\n" + message.toString());
+                if(serverUserInterface!=null) serverUserInterface.printConsole("Routing Message:\n" + message.toString()+"\nMessage Body:\n"+message.getBody());
                 dataBase.updateMessage(message);
                 return response;
             } catch (Exception e) {
@@ -118,7 +123,8 @@ public class ServerNetwork extends NetworkUtils {
      * @return Either SUCCESS or FAIL packet is sent back
      */
     private Packet handleUpdateRequest(Packet request) {
-
+        //Updates amount of users
+        serverUserInterface.displayUserPopulation(dataBase.getUsers().size());
         try {
             Packet response = new Packet(Constants.Header.SUCCESS);
             String roomID = (String) request.getPayload();
@@ -188,11 +194,14 @@ public class ServerNetwork extends NetworkUtils {
     public Packet handleUserLogoffRequest(Packet request) {
         Packet response = new Packet(Constants.Header.FAIL);
         try {
-            String UID = request.toString();
-
+            String UID = request.getPayload().toString();
+            User toLogOff = dataBase.getUserByID(UID);
+            if(toLogOff !=null) serverUserInterface.printConsole("Logging Off: \""+toLogOff.getDisplayName()+"\"\nUID: "+toLogOff.getUserID());
             if (dataBase.removeUser(UID)) {
 
                 response = new Packet(Constants.Header.SUCCESS);
+                //Updates amount of users
+                serverUserInterface.displayUserPopulation(dataBase.getUsers().size());
             }
         }
         catch(Exception e){

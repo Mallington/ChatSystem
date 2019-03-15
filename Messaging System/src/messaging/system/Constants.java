@@ -76,7 +76,7 @@ public class Constants {
      * This enum denotes the type of packet being sent, whether it is a request or a response
      */
     public enum Header implements Serializable{
-        UPDATE, UPDATE_USER, LOGIN_USER, SEND_MESSAGE, UPDATE_DB, NOT_AUTHORISED, SUCCESS, INVALID_HEADER, UNEXPECTED_PACKET, FAIL
+        UPDATE, UPDATE_USER, LOGIN_USER, SEND_MESSAGE, UPDATE_DB, NOT_AUTHORISED, SUCCESS, INVALID_HEADER, UNEXPECTED_PACKET, FAIL, LOGOFF_USER
     }
 
 

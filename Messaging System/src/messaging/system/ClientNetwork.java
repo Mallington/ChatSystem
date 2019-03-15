@@ -175,6 +175,18 @@ public class ClientNetwork extends NetworkUtils{
         return false;
     }
 
+    public boolean logOff(){
+        Packet request = new Packet(Constants.Header.LOGOFF_USER);
+        request.setPayload(Constants.getUserId());
+
+        Packet response = makeRequest(request);
+        if(response != null){
+            return (response.getHeaderType().equals(Constants.Header.SUCCESS));
+        }
+
+        return false;
+    }
+
     /**
      * Sends a peopleOnline request to the server
      *

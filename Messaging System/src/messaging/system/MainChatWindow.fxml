@@ -38,7 +38,7 @@
                               <Insets left="50.0" right="70.0" />
                            </HBox.margin>
                         </Text>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#addChannel" styleClass="basic-button" text="+">
+                        <Button alignment="CENTER_RIGHT" disable="true" mnemonicParsing="false" onAction="#addChannel" opacity="0.0" styleClass="basic-button" text="+">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -78,7 +78,7 @@
                <children>
                   <HBox alignment="CENTER_RIGHT" styleClass="title-box">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-box" text="Members">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-box" text="Contacts">
                            <font>
                               <Font size="44.0" />
                            </font>
@@ -86,13 +86,19 @@
                               <Insets left="50.0" right="70.0" />
                            </HBox.margin>
                         </Text>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#addMember" styleClass="basic-button" text="+">
+                        <Button alignment="CENTER_RIGHT" disable="true" mnemonicParsing="false" onAction="#addMember" opacity="0.0" styleClass="basic-button" text="+">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Button>
                      </children>
                   </HBox>
+                  <ListView fx:id="userListView" prefHeight="549.0" prefWidth="362.0" VBox.vgrow="ALWAYS">
+                     <styleClass>
+                        <String fx:value="chat-room-list" />
+                        <String fx:value="title-box" />
+                     </styleClass>
+                  </ListView>
                </children>
             </VBox>
          </children>

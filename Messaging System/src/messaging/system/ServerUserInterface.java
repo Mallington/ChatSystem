@@ -20,5 +20,5 @@ public interface ServerUserInterface extends MasterUserInterface{
      * Displays the amount of users currently registered on the server
      * @param population amount of users on the server
      */
-    public void displaysUserPopulation(int population);
+    public void displayUserPopulation(int population);
 }
