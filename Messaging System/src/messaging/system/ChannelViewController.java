@@ -114,7 +114,6 @@ public class ChannelViewController implements Initializable {
                 String displayName = (ownMessage)? "You:" : (dataBase !=null) ?(dataBase.getUserByID(message.getSenderID()).getDisplayName()+":") : "User Not found:";
                 messageComp = new MessageComponent(displayName, message.getBody(), message.getMessageID(), ownMessage);
                 messageBoxes.add(messageComp);
-                //messageList.getChildren().add(messageComp.getNode());
                 messageController.add(messageComp);
             }
 

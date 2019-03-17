@@ -1,13 +1,13 @@
 ---Running the program---
-For the GUI JavaFX has been used, I would strongly recommend compiling on JDK
-	version 1.8.1 Vanilla, however if you are running OpenJDK I recommend this
+For the GUI JavaFX has been used, I would stongly reccomend compiling on JDK
+	version 1.8.1 Vanilla, however if you are running OpenJDK I reccomend this 
 	tutorial: https://openjfx.io/openjfx-docs/ which walks through manually adding
 	Java FX.
 
-Alternatively, Please don't hesitate to contact me and I can show you it working.
+Alternatively, Please don't hesistate to contact me and I can show you it working.
 
 ---Program Parameters---
-Note: All parameters are case sensitive
+Note: All parameters are case sensetive
 	---ChatServer and ChatClient---
 	-GUI (Optional): Accepts true or false : Denotes whether GUI should run
 
@@ -28,7 +28,7 @@ Note: All parameters are case sensitive
 
 	---ServerInterface---
 		The console interface can be used to see an overview of the packets being 
-		routed and their contents. As well as new user logons and user logoffs.
+		routed and their contents. Aswell as new user logons and user logoffs.
 
 	---ServerInterface---
 		The console interface can be used to see an overview of the packets being 
@@ -40,7 +40,7 @@ Note: All parameters are case sensitive
 ---Graphical Interface---
 	---Running the GUI (different options):---
 		*The parameter '-GUI true' is entered into either the ChatClient or 
-		ChatServer main methods as commandline arguments
+		ChatServer main methods as commanline arguments
 
 		*The alternative classes ChatClientGUI or ChatServerGUI can be run
 
@@ -67,9 +67,9 @@ Note: All parameters are case sensitive
 	particular user. Note your display name can be changed through the '-name'
 	parameter
 
-	*Messaging: To send a message, simply type in the text box and click enter
+	*Messaging: To send a message, simply type in the textbox and click enter
 
-	*Contacts Sidebar: Contains the UIDs and display names of every single user
+	*Contacts Sidebar: Contains the UIDS and display names of every single user
 	the client has ever come into contact with while being online, note: retains
 	user cache even after user has logged off.
 
@@ -82,7 +82,7 @@ Note: All parameters are case sensitive
 	previous events
 	*Also displays other information such as the amount of users online and the
 	port it is on
-	*To exit press the close window button.
+	*To exit press the clode window button.
 
 ---Network Overview---
 *The server acts acts like a REST server, the client makes a request to the

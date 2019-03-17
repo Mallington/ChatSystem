@@ -4,7 +4,7 @@ public class ChatServerGUI {
     public static void main(String args[]){
         Constants.updateConstants(args, Constants.NodeType.ChatServer);
 
-        //Prompts
+        //Allows user to edit parameters
         GeneralUtils.promptUserOptions(args, Constants.NodeType.ChatServer, "-csp");
 
         Data db = new Data();

@@ -105,29 +105,48 @@ public abstract class NetworkUtils {
     public boolean initSocket(){
         try {
             server = new ServerSocket(this.port);
+
+            //If it reaches this point, the server initialisation was successful, returns true to indicate success
             return true;
         } catch (IOException e) {
             if(masterOutput!=null) masterOutput.displayError("Port already occupied", "Please stop all other instances of the server.");
+
+            //Unsuccessful return false
             return false;
         } catch(Exception e){
             if(masterOutput!=null) masterOutput.displayError("Unknown Error", e.getMessage());
+
+            //Unsuccessful return false
             return false;
         }
     }
 
     /**
-     * Starts listening for incoming packets
+     * Starts listening for incoming packets, if the port is already occupied then the it will keep on re-attempting until thread is
+     * interrupted
      */
     public void startListening(){
+
+        //First checks to see if a listener is already listening, if not it will attempt to create a socket
         if(!listen) {
             listen = true;
+
+            // will attempt to initiate socket with the method: initSocket(), if false is returned it will keep on trying
+
             while(!initSocket()&&  (serverThread==null ||serverThread.isInterrupted())){
                 try {
+                    //Lets user know it will re-attempt connection
                     if(masterOutput!=null) masterOutput.printConsole("Retrying in "+(retryPeriod/1000.0)+" seconds ...");
+                    //Waits for se period
                     Thread.sleep(retryPeriod);
                 } catch (InterruptedException e) {}
             }
+
+            //If the main while loop is exited, it means that the socket has been successfully initiated
+
             if(masterOutput!=null) masterOutput.printConsole("Server is open for business.");
+
+            //Starts server thread and stores the location of the thread in the variable: serverThread
             (serverThread = new Thread(serverRunnable)).start();
         }
         else{
@@ -140,11 +159,15 @@ public abstract class NetworkUtils {
      */
     public void stopListening(){
         if(masterOutput !=null) masterOutput.printConsole("Stopping server thread");
+
         try{
+            //Attempts to close server thread
             server.close();
         }catch(Exception e){
             if(masterOutput !=null)masterOutput.displayError("Server Thread","Failed to close");
         }
+
+        //Sets server listener flag to false, causing the serverThread to naturally come to an end
         listen = false;
     }
 
@@ -152,9 +175,14 @@ public abstract class NetworkUtils {
      * Runnable runs in background listening for incoming requests, notifying the appropriate listener methods
      */
     private Runnable serverRunnable = ()->{
+        //Will keep on accepting packets until listen is set to false
         while(listen) {
+
             try {
+                //Waits here until new packet is received
                 Socket sock = server.accept();
+
+                //New thread is spawned to handle incoming request
                 new Thread(() -> handleRequest(sock)).start();
 
             } catch (IOException e) {
@@ -266,17 +294,34 @@ public abstract class NetworkUtils {
     public Packet makeRequest(Packet requestPacket){
         if (serverAddress != null) {
             Packet responce = null;
+
+            //First checks that network isn't closed
             while(!isNetworkClosed()) {
                 try {
+
+                    //Creates a new socket to output on
                     Socket sock = new Socket(serverAddress, this.port);
+
+                    //initialises a stream that a packet can be written to
                     ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
+
+                    //Sets amount of time to wait before a timeout is declared
                     sock.setSoTimeout(timeout);
+
+                    //Adds specific client information such as the ID of the sender
                     requestPacket = linePacket(requestPacket);
+
+                    //Sends the packet to the receiving socket
                     out.writeObject(requestPacket);
+
                     try {
                         sock.setSoTimeout(timeout);
+
+                        //Waits for response packet and receives it
                         ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
                         Packet ret = (Packet) in.readObject();
+
+                        //Sets status to notify implementing classes that network connection has not been lost
                         connectionLost = false;
                         if(ret !=null) return ret;
                     } catch (ClassNotFoundException e) {

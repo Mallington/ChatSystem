@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 /**
- * Methods used for updating the server
+ * Methods used for setting up server, used to tidy up main method
  */
 public class ServerUtils {
     /**
