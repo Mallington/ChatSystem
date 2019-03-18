@@ -99,6 +99,10 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     private CustomListCellController<UserComponent> userListController = null;
 
+    /**
+     * Used for sending notification
+     */
+    private NotificationManager noticationController;
 
 
 
@@ -112,6 +116,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         try {
             channelListController = new CustomListCellController<GroupComponent>(channelList);
             userListController = new CustomListCellController<UserComponent>(userListView);
+            noticationController = new NotificationManager();
         }catch(Exception e){
             System.out.println("Init in Main Controller failed!");
         }
@@ -182,6 +187,21 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
      */
     public void addMember(){
         //For future development
+    }
+
+    /**
+     * Assembles data and sends a notification with derived from the contents of the message object
+     * @param message to be in notification
+     */
+    public void sendNotification(Message message){
+        try {
+            String sender = dataBase.getUserByID(message.getSenderID()).getDisplayName();
+            String room = dataBase.getChatRoomByID(message.getRoomID()).getName();
+
+            noticationController.sendNotification("From: " + sender, "Room: " + room, message.getBody());
+        } catch(Exception e){
+
+        }
     }
 
     /**
@@ -301,6 +321,7 @@ public class MainChatWindowController implements ClientUserInterface, Initializa
         if(channelView !=null){
             try {
                 channelView.getController().updateMessage(newMessage);
+                sendNotification(newMessage);
             } catch (IOException e) {
                 displayError("Channel View Controller","Failed to obtain: "+newMessage.getRoomID());
             }

@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" line="146" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" line="151" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05fc757d-3a6e-4b9a-9b77-64ad7f0d084a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messaging/system/NotificationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GeneralUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GeneralUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NetworkUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NetworkUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/StageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/StageLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/NetworkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/NetworkUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +24,20 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="201" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -92,18 +89,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/messaging/system/ParameterWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="55" column="33" lean-forward="true" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/messaging/system/GeneralUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -127,11 +112,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/messaging/system/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="277">
+              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/messaging/system/NotificationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -139,12 +133,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="168" column="20" lean-forward="true" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
+            <state relative-caret-position="-1311">
+              <caret line="192" column="99" selection-start-line="192" selection-start-column="99" selection-end-line="192" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10588#10589#0" expanded="true" />
-                <element signature="e#10628#10629#0" expanded="true" />
+                <element signature="e#9457#9458#0" expanded="true" />
+                <element signature="e#11396#11397#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -172,7 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>makeRe</find>
       <find>return</find>
       <find>chann</find>
       <find>preferred</find>
@@ -201,6 +194,7 @@
       <find>DEFAULT</find>
       <find>DEFAULT_V</find>
       <find>networkClosed</find>
+      <find>failed to finf</find>
       <find>close</find>
     </findStrings>
     <replaceStrings>
@@ -224,7 +218,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindow.fxml" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatRoomChangeListener.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatRoom.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ClientUserInterface.java" />
@@ -262,7 +255,6 @@
         <option value="$PROJECT_DIR$/src/messaging/system/UserComponent.fxml" />
         <option value="$PROJECT_DIR$/src/messaging/system/UserComponent.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" />
-        <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/UserComponentController.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/StageLoader.java" />
@@ -275,6 +267,8 @@
         <option value="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" />
         <option value="$PROJECT_DIR$/src/messaging/system/README.txt" />
+        <option value="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" />
+        <option value="$PROJECT_DIR$/src/messaging/system/NotificationManager.java" />
       </list>
     </option>
   </component>
@@ -285,7 +279,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="43" />
+    <option name="x" value="-5" />
+    <option name="y" value="179" />
     <option name="width" value="1440" />
     <option name="height" value="806" />
   </component>
@@ -333,7 +328,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552844113199" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552923691345" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -384,7 +379,6 @@
     <configuration name="ChatClient" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="messaging.system.ChatClient" />
       <module name="Messaging System" />
-      <option name="PROGRAM_PARAMETERS" value="-ccp 14005 -cca ghjkvjhbk" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -408,6 +402,20 @@
       <module name="Messaging System" />
       <option name="PROGRAM_PARAMETERS" value="-csp 14005" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="messaging.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotificationManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="messaging.system.NotificationManager" />
+      <module name="Messaging System" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="messaging.system.*" />
@@ -476,9 +484,11 @@
       <item itemvalue="Application.StageLoader" />
       <item itemvalue="Application.ChatClientGUI" />
       <item itemvalue="Application.ParameterWindow" />
+      <item itemvalue="Application.NotificationManager" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NotificationManager" />
         <item itemvalue="Application.ChatClientGUI" />
         <item itemvalue="Application.ParameterWindow" />
         <item itemvalue="Application.StageLoader" />
@@ -507,15 +517,15 @@
       <workItem from="1552316465731" duration="102822000" />
       <workItem from="1552653453451" duration="4055000" />
       <workItem from="1552738437062" duration="335000" />
-      <workItem from="1552745731856" duration="2302000" />
+      <workItem from="1552745731856" duration="5730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284205000" />
+    <option name="totallyTimeSpent" value="287633000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="23" width="1440" height="806" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="811" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20529328" />
@@ -527,7 +537,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32686982" />
-      <window_info anchor="bottom" x="486" y="284" width="637" height="339" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.30952382" />
+      <window_info anchor="bottom" x="486" y="284" width="637" height="339" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.30737135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3952514" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -539,13 +549,13 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3102493" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3294881" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Database" order="7" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="right" id="Maven" order="10" weight="0.3297568" />
@@ -586,6 +596,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ConsoleUtils.java">
@@ -986,18 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="168" column="20" lean-forward="true" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10588#10589#0" expanded="true" />
-            <element signature="e#10628#10629#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1010,8 +1012,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/messaging/system/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="277">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1311">
+          <caret line="192" column="99" selection-start-line="192" selection-start-column="99" selection-end-line="192" selection-end-column="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9457#9458#0" expanded="true" />
+            <element signature="e#11396#11397#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/messaging/system/NotificationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
