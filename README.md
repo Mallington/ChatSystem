@@ -14,3 +14,11 @@ All parameters are case sensitive, they can be used to change IP, port, username
 
 ### ChatServer
 	-csp <Integer> #The port that the server will load on.
+## Screen Shots
+### CLIENT
+![Parameter Window](https://raw.githubusercontent.com/Mallington/ChatSystem/master/Screenshots/Client-Parameter.png)
+![Client Window](https://raw.githubusercontent.com/Mallington/ChatSystem/master/Screenshots/Client.png)
+
+### Server
+![Parameter Window](https://raw.githubusercontent.com/Mallington/ChatSystem/master/Screenshots/Server-Parameter.png)
+![Server Window](https://raw.githubusercontent.com/Mallington/ChatSystem/master/Screenshots/Server.png)
