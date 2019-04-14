@@ -43,7 +43,10 @@ public class NotificationManager {
     public static void main(String[] args){
         NotificationManager notifications = new NotificationManager();
 
-        System.out.println(notifications.sendNotification("Title","Subtitle", "Message"));
+
+        try{Thread.sleep(10000);} catch(Exception e){}
+
+        System.out.println(notifications.sendNotification("Sleegp","Time to get some sleep?", "Let's meet your weekly goals."));
     }
 
 }

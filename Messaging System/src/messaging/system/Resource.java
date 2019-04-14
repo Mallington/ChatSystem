@@ -47,6 +47,7 @@ public class Resource<ControllerType> {
      * @throws IOException
      */
     public Parent getNode() throws IOException {
+        System.out.println(getClass().getResource(RESOURCE).getPath());
         return (node ==null) ?(node = LOADER.load(getClass().getResource(RESOURCE).openStream())) : node;
     }
 
@@ -57,7 +58,6 @@ public class Resource<ControllerType> {
      * @throws IOException
      */
     public ControllerType getController() throws IOException {
-
         return (controller ==null) ? (controller = LOADER.getController()) : controller;
     }
 
