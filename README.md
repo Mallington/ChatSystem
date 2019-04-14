@@ -1,19 +1,19 @@
 # ChatSystem
 Primary aim is to create a simple chat system, with the intention of adding other features such as public key, private key cryptography via the Diffie-Hellman key exchange algorithm and maybe advancing to eliptical curve ciphers in the near future.
 
----Command Line Parameters---
-Note: All parameters are case sensitive
-	---ChatServer and ChatClient---
-	-GUI (Optional): Accepts true or false : Denotes whether GUI should run
+## Command Line Parameters
+All parameters are case sensitive, they can be used to change IP, port, username, UID etc.
+### ChatServer and ChatClient
+	-GUI <Boolean> #True or False - Denotes whether GUI should run
 
-	---ChatClient---
-    -cca (Optional): Address in the form of an IP address or another form
-    -ccp (Optional): Port to be connected to
-    -user (Optional): Specified the uniquely assigned ID for an existing user
-    -name (Optional): Sets the display name of the user
+### ChatClient
+    -cca <String> #Address in the form of an IP address or another form
+    -ccp <Integer>) #Port to be connected to
+    -user <String> #Specified the uniquely assigned ID for an existing user
+    -name <String> #Sets the display name of the user
 
-    ---ChatServer---
-	-csp (Optional): The port that the server will load on.
+### ChatServer
+	-csp <Integer> #The port that the server will load on.
 
 ---Console Interface---
 	On both interfaces, if the parameter -GUI has not been specified, you will be
@@ -32,15 +32,11 @@ Note: All parameters are case sensitive
 
 	As per the specification, EXIT can be called to exit both interfaces.
 
----Graphical Interface---
-	---Running the GUI (different options):---
-		*The parameter '-GUI true' is entered into either the ChatClient or 
-		ChatServer main methods as commandline arguments
+## Graphical Interface---
+### Running the GUI (different options):
+- The parameter '-GUI true' is entered into either the ChatClient or ChatServer main methods as commandline arguments
 
-		*The alternative classes ChatClientGUI or ChatServerGUI can be run
-
-		*Or 'Yes' can be entered when prompted to when running the normal
-		ChatServer and ChatClient classes
+- The alternative classes ChatClientGUI or ChatServerGUI can be run or 'Yes' can be entered when prompted to when running the normal ChatServer and ChatClient classes
 
 	---Parameter Window ---
 	Both the server and client first launches a graphical menu with all the
