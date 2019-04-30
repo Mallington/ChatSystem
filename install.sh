@@ -6,4 +6,5 @@ then
     exit 1
 else
    echo "Installing the latest version of Mallington/ChatSystem from github."
+   echo "This feature is currently not available, please install manually"
 fi
