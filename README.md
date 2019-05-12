@@ -4,7 +4,7 @@ Primary aim is to create a simple chat system, with the intention of later addin
 ## Command Line Parameters
 All parameters are case sensitive, they can be used to change IP, port, username, UID etc.
 ### ChatServer and ChatClient
-	-GUI <Boolean> #True or False - Denotes whether GUI should run
+	`-GUI <Boolean> #True or False - Denotes whether GUI should run`
 
 ### ChatClient
     -cca <String> #Address in the form of an IP address or another form
