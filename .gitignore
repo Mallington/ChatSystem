@@ -6,6 +6,7 @@
 *.iml
 *.iws
 build
+.idea/*
  
 # Mac
 .DS_Store
