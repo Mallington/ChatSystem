@@ -48,7 +48,9 @@ public abstract class ConsoleUtils {
                 userInputted(scanner.nextLine(), this);
 
         } catch(Exception e){
-                System.out.println("fail");
+                System.out.println(e);
+                System.out.println("Scanning text failed");
+                while(captureConsoleInput && !consoleListenerThread.isInterrupted());
             }
         }
     };
