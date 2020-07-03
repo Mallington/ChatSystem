@@ -23,7 +23,7 @@
                     <archive>
                         <manifest>
                             <packageName>com.mallington.ChatSystem</packageName>
-                            <mainClass>messaging.system.ChatServer</mainClass>
+                            <mainClass>messaging.system.Main</mainClass>
                         </manifest>
                         <manifestEntries>
                             <Created-By>mallington</Created-By>

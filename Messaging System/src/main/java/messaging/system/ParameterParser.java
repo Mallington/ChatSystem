@@ -123,9 +123,8 @@ public class ParameterParser {
      */
     private void addParameters(List<String> validArguments) {
         for (int i = 0; i < validArguments.size(); i += 2) {
-            if (!setParamByID(validArguments.get(i), validArguments.get(i + 1))) {
-                System.out.println("Ignoring unknown parameter ID: " + validArguments.get(i));
-            }
+            setParamByID(validArguments.get(i), validArguments.get(i + 1));
+
         }
     }
 

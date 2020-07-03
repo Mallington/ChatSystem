@@ -25,126 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05fc757d-3a6e-4b9a-9b77-64ad7f0d084a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Messaging System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Messaging System.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChannelViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatClientGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatRoomChangeListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ChatServerGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientNetwork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ClientUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ConsoleUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants$Header.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants$NodeType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Constants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/CustomListCellController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Data$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GeneralUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GroupComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/GroupComponentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainChatWindowController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MainServerWindowController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MasterUserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MessageComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/MessageComponentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NetworkUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NotificationManager$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NotificationManager$Device.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/NotificationManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Packet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Parameter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindowController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ParameterWindowController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerConsole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerNetwork.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUserInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/ServerUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/StageLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/StageRunnable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/UpdateRequestContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/UpdateResponceContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/UserComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/Messaging System/messaging/system/UserComponentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChannelView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChannelView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChannelViewComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChannelViewComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChannelViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChannelViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatRoomChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatRoomChangeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ChatServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ChatServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ClientConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ClientNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ClientUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ClientUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ClientUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ConsoleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ConsoleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/CustomListCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/CustomListCellController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/GeneralUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/GeneralUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/GroupComponent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/GroupComponent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/GroupComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/GroupComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/GroupComponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/GroupComponentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainChatWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MainChatWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainChatWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MainChatWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainServerWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MainServerWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MainServerWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MainServerWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MasterUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MasterUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MessageComponent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MessageComponent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MessageComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MessageComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/MessageComponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/MessageComponentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/NetworkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/NetworkUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/NotificationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/NotificationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Packet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Parameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ParameterParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ParameterParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ParameterWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ParameterWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ParameterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ParameterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ParameterWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ParameterWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ServerConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ServerNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerUserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ServerUserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/StageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/StageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/StageRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/StageRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/UpdateRequestContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/UpdateRequestContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/UpdateResponceContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/UpdateResponceContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/UserComponent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/UserComponent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/UserComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/UserComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/UserComponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/UserComponentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messaging/system/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messaging/system/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +153,7 @@
       <recent name="$PROJECT_DIR$/src/" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ChatClient">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Chat Server (Different port)" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="messaging.system.ChatServer" />
       <module name="Messaging System" />
@@ -321,6 +203,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="messaging.system.Main" />
+      <module name="Messaging System" />
+      <option name="PROGRAM_PARAMETERS" value="-nodetype &quot;SERVER&quot; -GUI FALSE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -391,6 +281,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.ChatClient" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Application.ChatClient (Different port)" />
       <item itemvalue="Application.ChatServer" />
       <item itemvalue="Application.Chat Server (Different port)" />
@@ -436,7 +327,7 @@
       <workItem from="1554980905852" duration="1103000" />
       <workItem from="1555066309855" duration="339000" />
       <workItem from="1593702148429" duration="2059000" />
-      <workItem from="1593769309867" duration="2958000" />
+      <workItem from="1593769309867" duration="4394000" />
     </task>
     <servers />
   </component>
@@ -460,43 +351,48 @@
     </state>
     <state x="242" y="-985" key="#Project_Structure/0.23.1440.801/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593770144804" />
     <state x="242" y="-985" key="#Project_Structure/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593771825798" />
-    <state x="180" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593702537513">
-      <screen x="0" y="23" width="1440" height="822" />
+    <state x="33" y="-985" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593774207630">
+      <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
+    <state x="33" y="-985" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774207630" />
     <state x="180" y="79" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.822/-207.-1057.1920.1057@0.23.1440.822" timestamp="1593702537513" />
+    <state x="306" y="-850" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593774066146">
+      <screen x="-207" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="306" y="-850" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774066146" />
     <state x="381" y="-871" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1593770302051">
       <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
     <state x="381" y="-871" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.23.1440.801/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593770302051" />
-    <state width="937" height="166" key="GridCell.Tab.0.bottom" timestamp="1593772447715">
+    <state width="937" height="166" key="GridCell.Tab.0.bottom" timestamp="1593774167717">
       <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="166" key="GridCell.Tab.0.bottom/0.23.1440.804/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593771633372" />
-    <state width="937" height="166" key="GridCell.Tab.0.bottom/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593772447715" />
+    <state width="937" height="166" key="GridCell.Tab.0.bottom/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774167717" />
     <state width="1358" height="183" key="GridCell.Tab.0.bottom/0.23.1440.822/-207.-1057.1920.1057@0.23.1440.822" timestamp="1593702597220" />
     <state width="1358" height="183" key="GridCell.Tab.0.bottom/0.23.1440.823/-207.-1057.1920.1057@0.23.1440.823" timestamp="1593702619519" />
     <state width="1878" height="183" key="GridCell.Tab.0.bottom/0.23.1440.825/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593704499890" />
-    <state width="937" height="166" key="GridCell.Tab.0.center" timestamp="1593772447714">
+    <state width="937" height="166" key="GridCell.Tab.0.center" timestamp="1593774167716">
       <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="166" key="GridCell.Tab.0.center/0.23.1440.804/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593771633371" />
-    <state width="937" height="166" key="GridCell.Tab.0.center/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593772447714" />
+    <state width="937" height="166" key="GridCell.Tab.0.center/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774167716" />
     <state width="1358" height="183" key="GridCell.Tab.0.center/0.23.1440.822/-207.-1057.1920.1057@0.23.1440.822" timestamp="1593702597219" />
     <state width="1358" height="183" key="GridCell.Tab.0.center/0.23.1440.823/-207.-1057.1920.1057@0.23.1440.823" timestamp="1593702619518" />
     <state width="1878" height="183" key="GridCell.Tab.0.center/0.23.1440.825/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593704499889" />
-    <state width="937" height="166" key="GridCell.Tab.0.left" timestamp="1593772447714">
+    <state width="937" height="166" key="GridCell.Tab.0.left" timestamp="1593774167716">
       <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="166" key="GridCell.Tab.0.left/0.23.1440.804/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593771633371" />
-    <state width="937" height="166" key="GridCell.Tab.0.left/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593772447714" />
+    <state width="937" height="166" key="GridCell.Tab.0.left/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774167716" />
     <state width="1358" height="183" key="GridCell.Tab.0.left/0.23.1440.822/-207.-1057.1920.1057@0.23.1440.822" timestamp="1593702597218" />
     <state width="1358" height="183" key="GridCell.Tab.0.left/0.23.1440.823/-207.-1057.1920.1057@0.23.1440.823" timestamp="1593702619518" />
     <state width="1878" height="183" key="GridCell.Tab.0.left/0.23.1440.825/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593704499889" />
-    <state width="937" height="166" key="GridCell.Tab.0.right" timestamp="1593772447715">
+    <state width="937" height="166" key="GridCell.Tab.0.right" timestamp="1593774167717">
       <screen x="-207" y="-1057" width="1920" height="1057" />
     </state>
     <state width="1878" height="166" key="GridCell.Tab.0.right/0.23.1440.804/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593771633371" />
-    <state width="937" height="166" key="GridCell.Tab.0.right/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593772447715" />
+    <state width="937" height="166" key="GridCell.Tab.0.right/0.23.1440.806/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593774167717" />
     <state width="1358" height="183" key="GridCell.Tab.0.right/0.23.1440.822/-207.-1057.1920.1057@0.23.1440.822" timestamp="1593702597219" />
     <state width="1358" height="183" key="GridCell.Tab.0.right/0.23.1440.823/-207.-1057.1920.1057@0.23.1440.823" timestamp="1593702619519" />
     <state width="1878" height="183" key="GridCell.Tab.0.right/0.23.1440.825/-207.-1057.1920.1057@-207.-1057.1920.1057" timestamp="1593704499889" />
