@@ -17,7 +17,7 @@
             <artifactId>jfxrt</artifactId>
             <version>${java.version}</version>
             <scope>system</scope>
-            <systemPath>${java.home}/lib/ext/jfxrt.jar</systemPath>
+            <systemPath>${project.basedir}/lib/jfxrt.jar</systemPath>
         </dependency>
     </dependencies>
     <build>
