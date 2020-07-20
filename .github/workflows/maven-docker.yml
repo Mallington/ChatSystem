@@ -33,3 +33,6 @@ jobs:
     
     - name: Build docker image
       run: docker build ./ --tag chatserver:1.0.0
+      
+    - name: Docker push
+      run: docker push mallington/chatsystem:1.0.0
