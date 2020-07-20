@@ -1,2 +1,16 @@
 /Messaging System/dist/
 .DS_Store
+
+# Intellij
+.idea/
+*.iml
+*.iws
+build
+.idea/*
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
