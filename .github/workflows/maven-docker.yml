@@ -22,3 +22,5 @@ jobs:
         java-version: 1.8.0
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Build docker image
+      run: docker build ./ --tag chatserver:1.0.0
