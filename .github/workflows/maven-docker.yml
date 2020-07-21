@@ -36,3 +36,9 @@ jobs:
       
     - name: Docker push
       run: docker push mallington/chatsystem:1.0.0
+    
+    - name: Archive latest jar
+      uses: actions/upload-artifact@v1
+      with:
+        name: target
+        path: target
