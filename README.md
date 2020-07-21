@@ -14,6 +14,9 @@ All parameters are case sensitive, they can be used to change IP, port, username
 
 ### ChatServer
 	-csp <Integer> #The port that the server will load on.
+## Server OCI Deployment
+### Kubernetes command
+	kubectl apply -f https://raw.githubusercontent.com/Mallington/ChatSystem/master/deployment.yaml
 ## Screen Shots
 ### CLIENT
 ![Parameter Window](https://raw.githubusercontent.com/Mallington/ChatSystem/master/Screenshots/Client-Parameter.png)
