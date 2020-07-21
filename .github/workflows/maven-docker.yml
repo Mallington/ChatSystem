@@ -40,5 +40,5 @@ jobs:
     - name: Archive latest jar
       uses: actions/upload-artifact@v1
       with:
-        name: target
-        path: target
+        name: Java Archive
+        path: target/MessagingSystem-1.0-SNAPSHOT.jar
