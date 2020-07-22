@@ -1,5 +1,6 @@
 # ChatSystem
 ![Java CI with Maven](https://github.com/Mallington/ChatSystem/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 Primary aim is to create a simple chat system, with the intention of later adding other features such as public key, private key cryptography via the Diffie-Hellman key exchange algorithm and maybe advancing to eliptical curve ciphers in the near future.
 
 ## Command Line Parameters
