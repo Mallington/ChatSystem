@@ -105,7 +105,7 @@ public class ClientUtils {
         StageRunnable<MainChatWindowController> setup = new StageRunnable<MainChatWindowController>() {
             @Override
             Resource setupStage(Stage primaryStage) {
-                Resource<MainChatWindowController> r = new Resource<MainChatWindowController>("MainChatWindow.fxml");
+                Resource<MainChatWindowController> r = new Resource<MainChatWindowController>("/MainChatWindow.fxml");
                 primaryStage.setMinWidth(900);
                 primaryStage.setMinHeight(400);
                 primaryStage.setTitle("Chat Client");

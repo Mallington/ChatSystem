@@ -58,6 +58,7 @@ public class StageLoader<Controller> extends Application{
                      //Sets flag to false to notify other thread that process is complete
                      userInterfaceSemaphore = false;
                  } catch (Exception e){
+                     e.printStackTrace();
                      System.out.println("Failed to setup stage");
                  }
              }

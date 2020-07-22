@@ -55,7 +55,7 @@ public class ServerUtils {
         StageRunnable<MainServerWindowController> setup = new StageRunnable<MainServerWindowController>() {
             @Override
             Resource setupStage(Stage primaryStage) {
-                Resource<MainServerWindowController> r = new Resource<MainServerWindowController>("MainServerWindow.fxml");
+                Resource<MainServerWindowController> r = new Resource<MainServerWindowController>("/MainServerWindow.fxml");
                 primaryStage.setMinWidth(385);
                 primaryStage.setMinHeight(400);
 

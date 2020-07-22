@@ -89,7 +89,7 @@ public class ParameterWindow extends  StageRunnable<ParameterWindowController>{
      */
     @Override
     Resource<ParameterWindowController> setupStage(Stage stage) {
-        Resource<ParameterWindowController> r = new Resource<ParameterWindowController>("ParameterWindow.fxml");
+        Resource<ParameterWindowController> r = new Resource<ParameterWindowController>("/ParameterWindow.fxml");
         stage.setMinWidth(358);
         stage.setMinHeight(258);
         stage.setTitle(title);

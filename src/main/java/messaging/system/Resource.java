@@ -26,13 +26,8 @@ public class Resource<ControllerType> {
      */
     public Resource(String res) {
         LOADER = new FXMLLoader();
-        RESOURCE = res;
-
+        RESOURCE =  res;
         try {
-
-
-
-
             getNode();
         } catch (IOException e) {
             System.out.println("Failed to fetch node");
@@ -47,7 +42,6 @@ public class Resource<ControllerType> {
      * @throws IOException
      */
     public Parent getNode() throws IOException {
-        System.out.println(getClass().getResource(RESOURCE).getPath());
         return (node ==null) ?(node = LOADER.load(getClass().getResource(RESOURCE).openStream())) : node;
     }
 

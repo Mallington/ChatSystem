@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="900.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@/messaging/system/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="messaging.system.MainChatWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="900.0" prefHeight="700.0" prefWidth="1200.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="messaging.system.MainChatWindowController">
    <children>
       <HBox alignment="CENTER" layoutX="46.0" layoutY="10.0" prefHeight="52.0" prefWidth="1164.0" styleClass="title-box" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
