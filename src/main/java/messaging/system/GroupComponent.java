@@ -19,7 +19,7 @@ public class GroupComponent extends Resource<GroupComponentController> {
      * @param groupPopulation the channel population
      */
     public GroupComponent(String groupName, int groupPopulation) {
-        super("GroupComponent.fxml");
+        super("/GroupComponent.fxml");
         try {
             getController().setGroupName(groupName);
             getController().setNumberOfPeople(groupPopulation);

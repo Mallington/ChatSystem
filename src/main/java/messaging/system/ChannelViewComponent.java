@@ -20,7 +20,7 @@ public class ChannelViewComponent extends Resource<ChannelViewController> {
      * @param room the Chat Room instance that will be graphically represented
      */
     public ChannelViewComponent(ChatRoom room) {
-        super("ChannelView.fxml");
+        super("/ChannelView.fxml");
         this.chatRoom = room;
     }
 

@@ -118,8 +118,10 @@ public class ChannelViewController implements Initializable {
             }
 
             } catch (IOException e) {
+                e.printStackTrace();
                     System.out.println("Failed to obtain peopleOnline controller");
             } catch (Exception e){
+                e.printStackTrace();
                 System.out.println("Failed to obtain peopleOnline controller");
             }
 

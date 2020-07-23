@@ -31,6 +31,7 @@ public class Resource<ControllerType> {
             getNode();
         } catch (IOException e) {
             System.out.println("Failed to fetch node");
+            e.printStackTrace();
         }
     }
 

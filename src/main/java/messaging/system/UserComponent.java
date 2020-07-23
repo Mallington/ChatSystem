@@ -19,7 +19,7 @@ public class UserComponent extends Resource<UserComponentController> {
      * @param UID         the uid
      */
     public UserComponent(String displayName, String UID) {
-        super("UserComponent.fxml");
+        super("/UserComponent.fxml");
         try {
             getController().setDisplayName(displayName);
             getController().setUID(UID);

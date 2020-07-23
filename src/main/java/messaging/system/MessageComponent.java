@@ -31,7 +31,7 @@ public class MessageComponent extends Resource<MessageComponentController> {
      * @param ownMessage  whether the component should be left or right aligned
      */
     public MessageComponent(String displayName, String messageText, String messageID, boolean ownMessage) {
-        super("MessageComponent.fxml");
+        super("/MessageComponent.fxml");
 
         this.messageID = messageID;
         this.ownMessage = ownMessage;
